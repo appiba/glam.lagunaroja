@@ -10,7 +10,10 @@
 
 <main class="app">
 
+  <!-- HOME -->
+
   <section id="homeScreen" class="screen active">
+
     <div class="glow glow-one"></div>
     <div class="glow glow-two"></div>
 
@@ -19,26 +22,61 @@
       <h1>VENEVO</h1>
     </header>
 
+    <!-- MENU -->
+
     <nav class="top-menu">
-      <button class="menu-btn active" id="openRadiosBtn">📻 Radios</button>
-      <button class="menu-btn">🎧 Música</button>
-      <button class="menu-btn">🏪 Negocios</button>
-      <button class="menu-btn">📅 Reservas</button>
-      <button class="menu-btn">🎟️ Eventos</button>
+
+      <button class="menu-btn active" id="openRadiosBtn">
+        📻 Radios
+      </button>
+
+      <button class="menu-btn">
+        🎧 Música
+      </button>
+
+      <button class="menu-btn">
+        🏪 Negocios
+      </button>
+
+      <button class="menu-btn">
+        📅 Reservas
+      </button>
+
+      <button class="menu-btn">
+        🎟️ Eventos
+      </button>
+
     </nav>
 
+    <!-- HERO -->
+
     <section class="hero">
+
       <div class="orb"></div>
-      <h2>Tu mundo digital en una sola plataforma</h2>
-      <p>Música, radios online, negocios, reservas, promociones y experiencias digitales.</p>
+
+      <h2>
+        Tu mundo digital en una sola plataforma
+      </h2>
+
+      <p>
+        Música, radios online, negocios,
+        reservas y experiencias digitales.
+      </p>
+
     </section>
+
   </section>
 
+  <!-- RADIOS -->
+
   <section id="radiosScreen" class="screen">
+
     <div class="glow glow-one"></div>
     <div class="glow glow-two"></div>
 
-    <button id="backHomeBtn" class="back-btn">← Volver</button>
+    <button id="backHomeBtn" class="back-btn">
+      ← Volver
+    </button>
 
     <header class="top">
       <p>VENEVO MÚSICA</p>
@@ -47,82 +85,166 @@
 
     <section class="radios-grid">
 
-      <div class="radio-card"
+      <!-- LA FAN -->
+
+      <div
+        class="radio-card"
         data-name="LA FAN FM"
         data-stream="https://radio.megahostec.com/listen/radio_la_fan_fm/stream"
-        data-image="assets/lafan-cover.jpg"
-        data-video="lafan.mp4">
-        <img src="assets/lafan-cover.jpg" alt="LA FAN FM">
-        <div><h3>LA FAN FM</h3><p>Entrar a radio</p></div>
+        data-image="logolafan.png"
+        data-video="lafan.mp4"
+      >
+
+        <img
+          src="logolafan.png"
+          alt="LA FAN FM"
+        >
+
+        <div>
+          <h3>LA FAN FM</h3>
+          <p>Entrar a radio</p>
+        </div>
+
       </div>
 
-      <div class="radio-card"
+      <!-- CLIP -->
+
+      <div
+        class="radio-card"
         data-name="DOBLE CLIP FM"
         data-stream="https://radio.megahostec.com/listen/radio_clipfm/stream"
-        data-image="assets/clipfm-cover.jpg"
-        data-video="">
-        <img src="assets/clipfm-cover.jpg" alt="DOBLE CLIP FM">
-        <div><h3>DOBLE CLIP FM</h3><p>Entrar a radio</p></div>
+        data-image="logoclip.jpeg"
+        data-video=""
+      >
+
+        <img
+          src="logoclip.jpeg"
+          alt="DOBLE CLIP FM"
+        >
+
+        <div>
+          <h3>DOBLE CLIP FM</h3>
+          <p>Entrar a radio</p>
+        </div>
+
+      </div>
+
+      <!-- FUTURAS -->
+
+      <div class="radio-card coming">
+        <div>
+          <h3>RADIO 3</h3>
+          <p>Próximamente</p>
+        </div>
       </div>
 
       <div class="radio-card coming">
-        <div><h3>Radio 3</h3><p>Agrega aquí el link</p></div>
+        <div>
+          <h3>RADIO 4</h3>
+          <p>Próximamente</p>
+        </div>
       </div>
 
       <div class="radio-card coming">
-        <div><h3>Radio 4</h3><p>Agrega aquí el link</p></div>
+        <div>
+          <h3>RADIO 5</h3>
+          <p>Próximamente</p>
+        </div>
       </div>
 
       <div class="radio-card coming">
-        <div><h3>Radio 5</h3><p>Agrega aquí el link</p></div>
-      </div>
-
-      <div class="radio-card coming">
-        <div><h3>Radio 6</h3><p>Agrega aquí el link</p></div>
-      </div>
-
-      <div class="radio-card coming">
-        <div><h3>Radio 7</h3><p>Agrega aquí el link</p></div>
+        <div>
+          <h3>RADIO 6</h3>
+          <p>Próximamente</p>
+        </div>
       </div>
 
     </section>
+
   </section>
 
+  <!-- PLAYER -->
+
   <section id="playerScreen" class="screen">
+
     <div class="glow glow-one"></div>
     <div class="glow glow-two"></div>
 
-    <button id="backRadiosBtn" class="back-btn">← Radios</button>
+    <button id="backRadiosBtn" class="back-btn">
+      ← Radios
+    </button>
 
     <header class="radio-header">
+
       <p>RADIO EN VIVO</p>
-      <h1 id="radioName">LA FAN FM</h1>
+
+      <h1 id="radioName">
+        LA FAN FM
+      </h1>
+
       <span>● EN VIVO</span>
+
     </header>
 
+    <!-- VIDEO -->
+
     <section id="introVideoBox" class="intro-video-box hidden">
-      <video id="introVideo" playsinline preload="auto">
-        <source src="lafan.mp4" type="video/mp4" />
+
+      <video
+        id="introVideo"
+        playsinline
+        preload="auto"
+      >
+
+        <source
+          src="lafan.mp4"
+          type="video/mp4"
+        />
+
       </video>
 
       <div class="intro-content">
+
         <h2>LA FAN FM</h2>
-        <p>Presentación oficial</p>
-        <button id="skipVideoBtn">Saltar video</button>
+
+        <p>
+          Presentación oficial
+        </p>
+
+        <button id="skipVideoBtn">
+          Saltar video
+        </button>
+
       </div>
+
     </section>
 
-    <section id="playerCard" class="player-card">
-      <img id="coverImage" src="assets/lafan-cover.jpg" alt="Radio">
+    <!-- PLAYER CARD -->
 
-      <button id="playBtn" class="play-btn">▶</button>
+    <section id="playerCard" class="player-card">
+
+      <img
+        id="coverImage"
+        src="logolafan.png"
+        alt="Radio"
+      >
+
+      <button id="playBtn" class="play-btn">
+        ▶
+      </button>
 
       <div id="bars" class="bars">
-        <span></span><span></span><span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
       <audio id="radioPlayer"></audio>
+
     </section>
+
   </section>
 
 </main>
