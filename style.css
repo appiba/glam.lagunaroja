@@ -16,7 +16,10 @@ body{
   max-width:430px;
   min-height:100vh;
   margin:auto;
-  background:radial-gradient(circle at top,#1b0b3d,#05010d 65%);
+
+  background:
+  radial-gradient(circle at top,#1b0b3d,#05010d 65%);
+
   overflow:hidden;
 }
 
@@ -104,25 +107,45 @@ body{
   border-radius:18px;
   color:white;
   font-weight:800;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
+
+  background:
+  rgba(255,255,255,.08);
+
+  border:
+  1px solid rgba(255,255,255,.12);
+
   backdrop-filter:blur(12px);
 }
 
 .menu-btn.active{
-  background:linear-gradient(135deg,#7b2cff,#c026ff);
-  box-shadow:0 12px 30px rgba(123,44,255,.35);
+  background:
+  linear-gradient(
+    135deg,
+    #7b2cff,
+    #c026ff
+  );
+
+  box-shadow:
+  0 12px 30px rgba(123,44,255,.35);
 }
 
 .hero{
   margin-top:38px;
   padding:28px;
   border-radius:34px;
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.12);
+
+  background:
+  rgba(255,255,255,.07);
+
+  border:
+  1px solid rgba(255,255,255,.12);
+
   backdrop-filter:blur(20px);
+
   text-align:center;
-  box-shadow:0 30px 70px rgba(0,0,0,.45);
+
+  box-shadow:
+  0 30px 70px rgba(0,0,0,.45);
 }
 
 .orb{
@@ -130,8 +153,17 @@ body{
   height:150px;
   margin:0 auto 30px;
   border-radius:50%;
-  background:radial-gradient(circle at 30% 30%,#fff,#9b4dff 35%,#440099 70%);
-  box-shadow:0 0 60px #9b4dff;
+
+  background:
+  radial-gradient(
+    circle at 30% 30%,
+    #fff,
+    #9b4dff 35%,
+    #440099 70%
+  );
+
+  box-shadow:
+  0 0 60px #9b4dff;
 }
 
 .hero h2{
@@ -147,36 +179,53 @@ body{
 }
 
 .back-btn{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
+  background:
+  rgba(255,255,255,.08);
+
+  border:
+  1px solid rgba(255,255,255,.12);
+
   color:white;
+
   padding:12px 16px;
+
   border-radius:16px;
+
   font-weight:800;
+
   margin-bottom:24px;
 }
 
 .radios-grid{
   margin-top:26px;
+
   display:grid;
   grid-template-columns:1fr;
   gap:18px;
 }
 
 .radio-card{
-  min-height:210px;
+  min-height:220px;
   border-radius:30px;
   overflow:hidden;
   position:relative;
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+  background:
+  rgba(255,255,255,.07);
+
+  border:
+  1px solid rgba(255,255,255,.12);
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.35);
 }
 
 .radio-card img{
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:contain;
+  background:white;
+  padding:30px;
   position:absolute;
   inset:0;
 }
@@ -186,8 +235,15 @@ body{
   left:0;
   right:0;
   bottom:0;
+
   padding:24px;
-  background:linear-gradient(to top,rgba(0,0,0,.92),transparent);
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,.92),
+    transparent
+  );
 }
 
 .radio-card h3{
@@ -201,16 +257,11 @@ body{
 
 .radio-card.coming{
   min-height:120px;
-  background:rgba(255,255,255,.06);
 }
 
 .radio-card.coming div{
   position:relative;
   background:none;
-}
-
-.radio-card.coming h3{
-  font-size:23px;
 }
 
 .radio-header h1{
@@ -233,8 +284,12 @@ body{
   overflow:hidden;
   height:430px;
   background:#000;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 30px 70px rgba(0,0,0,.45);
+
+  border:
+  1px solid rgba(255,255,255,.12);
+
+  box-shadow:
+  0 30px 70px rgba(0,0,0,.45);
 }
 
 .intro-video-box video{
@@ -250,7 +305,13 @@ body{
   right:0;
   bottom:0;
   padding:26px;
-  background:linear-gradient(to top,rgba(0,0,0,.92),transparent);
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,.92),
+    transparent
+  );
 }
 
 .intro-content h2{
@@ -268,7 +329,14 @@ body{
   padding:15px;
   border:none;
   border-radius:16px;
-  background:linear-gradient(135deg,#7b2cff,#c026ff);
+
+  background:
+  linear-gradient(
+    135deg,
+    #7b2cff,
+    #c026ff
+  );
+
   color:white;
   font-weight:900;
 }
@@ -277,16 +345,24 @@ body{
   margin-top:26px;
   padding:22px;
   border-radius:34px;
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.12);
+
+  background:
+  rgba(255,255,255,.07);
+
+  border:
+  1px solid rgba(255,255,255,.12);
+
   backdrop-filter:blur(20px);
+
   text-align:center;
 }
 
 .player-card img{
   width:100%;
   aspect-ratio:1/1;
-  object-fit:cover;
+  object-fit:contain;
+  background:white;
+  padding:35px;
   border-radius:28px;
 }
 
@@ -296,16 +372,26 @@ body{
   margin-top:24px;
   border:none;
   border-radius:50%;
-  background:linear-gradient(135deg,#7b2cff,#c026ff);
+
+  background:
+  linear-gradient(
+    135deg,
+    #7b2cff,
+    #c026ff
+  );
+
   color:white;
   font-size:30px;
   font-weight:900;
-  box-shadow:0 15px 35px rgba(123,44,255,.45);
+
+  box-shadow:
+  0 15px 35px rgba(123,44,255,.45);
 }
 
 .bars{
   height:42px;
   margin-top:18px;
+
   display:flex;
   justify-content:center;
   align-items:end;
@@ -325,12 +411,28 @@ body{
   opacity:1;
 }
 
-.bars.active span:nth-child(2){animation-delay:.1s;}
-.bars.active span:nth-child(3){animation-delay:.2s;}
-.bars.active span:nth-child(4){animation-delay:.3s;}
-.bars.active span:nth-child(5){animation-delay:.4s;}
+.bars.active span:nth-child(2){
+  animation-delay:.1s;
+}
+
+.bars.active span:nth-child(3){
+  animation-delay:.2s;
+}
+
+.bars.active span:nth-child(4){
+  animation-delay:.3s;
+}
+
+.bars.active span:nth-child(5){
+  animation-delay:.4s;
+}
 
 @keyframes bounce{
-  0%,100%{height:12px;}
-  50%{height:40px;}
+  0%,100%{
+    height:12px;
+  }
+
+  50%{
+    height:40px;
+  }
 }
