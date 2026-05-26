@@ -1,1 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#05010d;
+  min-height:100vh;
+  overflow-x:hidden;
+  color:white;
+  position:relative;
+}
+
+/* BACKGROUND GLOW */
+
+.bg-glow{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(100px);
+  z-index:-1;
+}
+
+.glow-1{
+  width:300px;
+  height:300px;
+  background:#7b2cff;
+  top:-80px;
+  left:-80px;
+}
+
+.glow-2{
+  width:280px;
+  height:280px;
+  background:#ff00aa;
+  bottom:-100px;
+  right:-100px;
+}
+
+/* APP */
+
+.app-container{
+  width:100%;
+  max-width:430px;
+  margin:auto;
+  padding:24px 18px 40px;
+}
+
+/* HEADER */
+
+.top-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:28px;
+}
+
+.mini-title{
+  color:#9d7cff;
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:700;
+}
+
+.top-header h1{
+  font-size:40px;
+  margin-top:6px;
+  font-weight:800;
+}
+
+.profile-btn{
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:18px;
+  background:rgba(255,255,255,0.08);
+  color:white;
+  font-size:18px;
+  backdrop-filter:blur(10px);
+}
+
+/* HERO */
+
+.hero-card{
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:34px;
+  padding:22px;
+  backdrop-filter:blur(20px);
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+.hero-text span{
+  color:#9d7cff;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.hero-text h2{
+  margin-top:10px;
+  font-size:34px;
+  font-weight:800;
+}
+
+.hero-text p{
+  margin-top:10px;
+  color:rgba(255,255,255,0.75);
+  line-height:1.5;
+  font-size:14px;
+}
+
+/* COVER */
+
+.hero-image{
+  width:100%;
+  margin-top:22px;
+  border-radius:28px;
+  overflow:hidden;
+  aspect-ratio:1/1;
+}
+
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* PLAYER */
+
+.player-section{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  margin-top:24px;
+}
+
+.play-btn{
+  width:78px;
+  height:78px;
+  border:none;
+  border-radius:50%;
+  background:linear-gradient(135deg,#7b2cff,#b026ff);
+  color:white;
+  font-size:26px;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(123,44,255,0.5);
+}
+
+.music-bars{
+  display:flex;
+  align-items:flex-end;
+  gap:7px;
+  height:42px;
+}
+
+.music-bars span{
+  width:7px;
+  background:#a855ff;
+  border-radius:20px;
+  height:12px;
+  opacity:0.4;
+}
+
+.music-bars.active span{
+  animation:bounce 0.8s infinite ease-in-out;
+  opacity:1;
+}
+
+.music-bars.active span:nth-child(2){
+  animation-delay:0.1s;
+}
+
+.music-bars.active span:nth-child(3){
+  animation-delay:0.2s;
+}
+
+.music-bars.active span:nth-child(4){
+  animation-delay:0.3s;
+}
+
+.music-bars.active span:nth-child(5){
+  animation-delay:0.4s;
+}
+
+@keyframes bounce{
+  0%,100%{
+    height:12px;
+  }
+
+  50%{
+    height:40px;
+  }
+}
+
+/* MODULES */
+
+.modules{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:26px;
+}
+
+.module-card{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:24px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  backdrop-filter:blur(15px);
+}
+
+.module-card i{
+  font-size:22px;
+  color:#b026ff;
+}
+
+.module-card span{
+  font-weight:600;
+}
+
+/* RADIOS */
+
+.radios-section{
+  margin-top:34px;
+}
+
+.section-title h3{
+  font-size:22px;
+  margin-bottom:18px;
+}
+
+.radio-slider{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:10px;
+}
+
+.radio-slider::-webkit-scrollbar{
+  display:none;
+}
+
+.radio-card{
+  min-width:240px;
+  height:320px;
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  flex-shrink:0;
+  cursor:pointer;
+  scroll-snap-align:start;
+  border:2px solid transparent;
+  transition:0.3s ease;
+}
+
+.radio-card.active-radio{
+  border-color:#a855ff;
+  transform:scale(1.02);
+}
+
+.radio-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.radio-overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:22px;
+  background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
+}
+
+.radio-overlay h4{
+  font-size:24px;
+  font-weight:700;
+}
+
+.radio-overlay p{
+  margin-top:6px;
+  color:rgba(255,255,255,0.8);
+  font-size:14px;
+}
