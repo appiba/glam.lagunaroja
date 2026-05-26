@@ -2,71 +2,142 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Venevo</title>
-
-  <link rel="stylesheet" href="style.css"/>
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venevo Música</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <div class="bg-glow glow-1"></div>
-  <div class="bg-glow glow-2"></div>
+  <main class="phone-app">
 
-  <main class="app-container">
+    <!-- HOME -->
 
-    <!-- HEADER -->
+    <section id="homeScreen" class="screen active">
 
-    <header class="top-header">
+      <div class="glow glow-one"></div>
+      <div class="glow glow-two"></div>
 
-      <div>
-        <span class="mini-title">PLATAFORMA DIGITAL</span>
+      <header class="header">
+        <p>PLATAFORMA DIGITAL</p>
         <h1>VENEVO</h1>
-      </div>
+      </header>
 
-      <button class="profile-btn">
-        <i class="fa-solid fa-user"></i>
-      </button>
+      <section class="hero">
 
-    </header>
+        <div class="orb"></div>
 
-    <!-- HERO -->
+        <h2>
+          Tu mundo digital en una sola plataforma
+        </h2>
 
-    <section class="hero-card">
-
-      <div class="hero-text">
-        <span>NOW PLAYING</span>
-
-        <h2 id="heroTitle">LA FAN FM</h2>
-
-        <p id="heroDescription">
-          Música, entretenimiento y radios online en un solo lugar.
+        <p>
+          Música, radios online, negocios, reservas,
+          promociones y experiencias digitales.
         </p>
-      </div>
 
-      <div class="hero-image">
-
-        <img
-          id="heroCover"
-          src="assets/lafan-cover.jpg"
-          alt="cover"
-        />
-
-      </div>
-
-      <div class="player-section">
-
-        <button id="playBtn" class="play-btn">
-          <i class="fa-solid fa-play"></i>
+        <button id="enterRadiosBtn" class="main-btn">
+          Entrar a Radios
         </button>
 
-        <div class="music-bars" id="musicBars">
+      </section>
+
+      <section class="modules">
+
+        <div class="module">
+          <span>🎧</span>
+          <p>Música</p>
+        </div>
+
+        <div class="module">
+          <span>🏪</span>
+          <p>Negocios</p>
+        </div>
+
+        <div class="module">
+          <span>📅</span>
+          <p>Reservas</p>
+        </div>
+
+        <div class="module">
+          <span>🎟️</span>
+          <p>Eventos</p>
+        </div>
+
+      </section>
+
+    </section>
+
+    <!-- RADIO SCREEN -->
+
+    <section id="radioScreen" class="screen">
+
+      <div class="glow glow-one"></div>
+      <div class="glow glow-two"></div>
+
+      <button id="backBtn" class="back-btn">
+        ← Volver
+      </button>
+
+      <header class="radio-header">
+
+        <p>VENEVO MÚSICA</p>
+
+        <h1 id="radioName">
+          LA FAN FM
+        </h1>
+
+        <span>● EN VIVO</span>
+
+      </header>
+
+      <!-- VIDEO INTRO -->
+
+      <section id="introVideoBox" class="intro-video-box hidden">
+
+        <video
+          id="introVideo"
+          playsinline
+          preload="auto"
+        >
+
+          <source
+            src="assets/videos/lafan.mp4"
+            type="video/mp4"
+          />
+
+        </video>
+
+        <div class="intro-content">
+
+          <h2>LA FAN FM</h2>
+
+          <p>
+            Presentación oficial
+          </p>
+
+          <button id="skipVideoBtn">
+            Saltar video
+          </button>
+
+        </div>
+
+      </section>
+
+      <!-- PLAYER -->
+
+      <section id="playerCard" class="player-card">
+
+        <img
+          id="coverImage"
+          src="assets/lafan-cover.jpg"
+          alt="Radio"
+        />
+
+        <button id="playBtn" class="play-btn">
+          ▶
+        </button>
+
+        <div id="bars" class="bars">
           <span></span>
           <span></span>
           <span></span>
@@ -74,67 +145,35 @@
           <span></span>
         </div>
 
-      </div>
+        <audio
+          id="radioPlayer"
+          src="https://radio.megahostec.com/listen/radio_la_fan_fm/stream">
+        </audio>
 
-      <audio
-        id="radioPlayer"
-        src="https://radio.megahostec.com/listen/radio_la_fan_fm/stream">
-      </audio>
+      </section>
 
-    </section>
+      <!-- RADIOS -->
 
-    <!-- MODULOS -->
-
-    <section class="modules">
-
-      <div class="module-card">
-        <i class="fa-solid fa-radio"></i>
-        <span>Radios</span>
-      </div>
-
-      <div class="module-card">
-        <i class="fa-solid fa-store"></i>
-        <span>Negocios</span>
-      </div>
-
-      <div class="module-card">
-        <i class="fa-solid fa-calendar-check"></i>
-        <span>Reservas</span>
-      </div>
-
-      <div class="module-card">
-        <i class="fa-solid fa-ticket"></i>
-        <span>Eventos</span>
-      </div>
-
-    </section>
-
-    <!-- RADIOS -->
-
-    <section class="radios-section">
-
-      <div class="section-title">
-        <h3>Radios disponibles</h3>
-      </div>
-
-      <div class="radio-slider">
+      <section class="radio-slider">
 
         <!-- LA FAN -->
 
         <div
           class="radio-card active-radio"
           data-name="LA FAN FM"
-          data-theme="lafan"
           data-stream="https://radio.megahostec.com/listen/radio_la_fan_fm/stream"
           data-image="assets/lafan-cover.jpg"
-          data-description="Música, entretenimiento y radios online en un solo lugar."
+          data-video="assets/videos/lafan.mp4"
         >
 
-          <img src="assets/lafan-cover.jpg" />
+          <img
+            src="assets/lafan-cover.jpg"
+            alt="LA FAN FM"
+          />
 
-          <div class="radio-overlay">
-            <h4>LA FAN FM</h4>
-            <p>En vivo</p>
+          <div>
+            <h3>LA FAN FM</h3>
+            <p>Radio en vivo</p>
           </div>
 
         </div>
@@ -144,22 +183,24 @@
         <div
           class="radio-card"
           data-name="DOBLE CLIP FM"
-          data-theme="clip"
           data-stream="https://radio.megahostec.com/listen/radio_clipfm/stream"
           data-image="assets/clipfm-cover.jpg"
-          data-description="La radio con ritmo, energía y buena música."
+          data-video=""
         >
 
-          <img src="assets/clipfm-cover.jpg" />
+          <img
+            src="assets/clipfm-cover.jpg"
+            alt="DOBLE CLIP FM"
+          />
 
-          <div class="radio-overlay">
-            <h4>DOBLE CLIP FM</h4>
-            <p>En vivo</p>
+          <div>
+            <h3>DOBLE CLIP FM</h3>
+            <p>Radio en vivo</p>
           </div>
 
         </div>
 
-      </div>
+      </section>
 
     </section>
 
