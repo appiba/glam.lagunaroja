@@ -3,16 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Glamping Manager</title>
+
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 
 <body>
+
+  <!-- =========================
+       SITIO PÚBLICO
+  ========================== -->
   <main id="publicApp">
+
+    <!-- HEADER -->
     <header class="site-header">
       <div class="brand">
-        <div class="brand-logo" id="publicLogo"><i class="fa-solid fa-mountain-sun"></i></div>
+        <div class="brand-logo" id="publicLogo">
+          <i class="fa-solid fa-mountain-sun"></i>
+        </div>
+
         <div>
           <h1 id="publicBusinessName">Glamping Boutique</h1>
           <p id="publicBusinessSubtitle">Naturaleza, descanso y experiencia privada</p>
@@ -22,46 +37,71 @@
       <div class="header-actions">
         <button class="lang-btn active" data-lang="es">ES</button>
         <button class="lang-btn" data-lang="en">EN</button>
+
         <button class="admin-open-btn" id="openLoginBtn">
-          <i class="fa-solid fa-user-lock"></i> Acceso
+          <i class="fa-solid fa-user-lock"></i>
+          Acceso
         </button>
       </div>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-overlay"></div>
+
       <div class="hero-content">
         <span class="eyebrow">Zuleta · Ibarra · Ecuador</span>
+
         <h2>Reserva tu experiencia en la naturaleza</h2>
-        <p>Glampings privados cerca de Laguna Roja y Cubilche, con comodidad, paisaje y atención personalizada.</p>
+
+        <p>
+          Glampings privados cerca de Laguna Roja y Cubilche, con comodidad,
+          paisaje y atención personalizada.
+        </p>
+
         <div class="hero-badges">
-          <span><i class="fa-solid fa-bed"></i> Hospedaje privado</span>
-          <span><i class="fa-solid fa-utensils"></i> Alimentación opcional</span>
-          <span><i class="fa-solid fa-tree"></i> Experiencias naturales</span>
+          <span>
+            <i class="fa-solid fa-bed"></i>
+            Hospedaje privado
+          </span>
+
+          <span>
+            <i class="fa-solid fa-utensils"></i>
+            Alimentación opcional
+          </span>
+
+          <span>
+            <i class="fa-solid fa-tree"></i>
+            Experiencias naturales
+          </span>
         </div>
       </div>
     </section>
 
+    <!-- CONSULTA DISPONIBILIDAD -->
     <section class="card booking-search">
       <div class="section-heading">
         <span>Paso 1</span>
         <h3>Consulta disponibilidad</h3>
-        <p>Selecciona fechas, adultos y niños. Las fechas pasadas no están disponibles.</p>
+        <p>
+          Selecciona fechas, adultos y niños. Las fechas pasadas no están disponibles.
+        </p>
       </div>
 
       <form id="availabilityForm" class="search-grid">
+
         <div class="field">
-          <label>Fecha de ingreso</label>
+          <label for="checkIn">Fecha de ingreso</label>
           <input type="date" id="checkIn" required />
         </div>
 
         <div class="field">
-          <label>Fecha de salida</label>
+          <label for="checkOut">Fecha de salida</label>
           <input type="date" id="checkOut" required />
         </div>
 
         <div class="field">
-          <label>Adultos</label>
+          <label for="adults">Adultos</label>
           <select id="adults">
             <option value="1">1 adulto</option>
             <option value="2" selected>2 adultos</option>
@@ -69,7 +109,7 @@
         </div>
 
         <div class="field">
-          <label>Niños</label>
+          <label for="children">Niños</label>
           <select id="children">
             <option value="0" selected>0 niños</option>
             <option value="1">1 niño</option>
@@ -79,34 +119,49 @@
         </div>
 
         <button type="submit" class="primary-btn search-btn">
-          <i class="fa-solid fa-magnifying-glass"></i> Buscar disponibilidad
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Buscar disponibilidad
         </button>
+
       </form>
     </section>
 
+    <!-- GLAMPINGS DISPONIBLES -->
     <section class="glampings-section">
       <div class="section-heading">
         <span>Paso 2</span>
         <h3>Elige tu glamping</h3>
-        <p>Una reserva pendiente bloquea temporalmente la fecha por 48 horas.</p>
+        <p>
+          Una reserva pendiente bloquea temporalmente la fecha por 48 horas.
+          Si un glamping está ocupado, revisa los otros disponibles para las mismas fechas.
+        </p>
       </div>
 
       <div id="availabilityMessage" class="availability-message hidden"></div>
+
       <div id="glampingsList" class="glampings-grid"></div>
     </section>
 
+    <!-- PANEL DE RESERVA CLIENTE -->
     <section id="reservationPanel" class="reservation-panel hidden">
       <div class="panel-card">
-        <button id="closeReservationPanel" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+
+        <button id="closeReservationPanel" class="close-panel">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
 
         <div class="section-heading">
           <span>Paso 3</span>
           <h3>Datos de reserva</h3>
-          <p>La reserva queda pendiente hasta confirmar el abono por WhatsApp.</p>
+          <p>
+            La reserva queda pendiente hasta confirmar el abono por WhatsApp.
+          </p>
         </div>
 
+        <!-- RESUMEN -->
         <div class="selected-summary">
           <img id="summaryImage" src="" alt="Glamping seleccionado" />
+
           <div>
             <h4 id="summaryGlampingName">Glamping</h4>
             <p id="summaryDates">Fechas</p>
@@ -115,19 +170,23 @@
           </div>
         </div>
 
+        <!-- FECHA ESPECIAL -->
         <div id="specialPackageBox" class="special-box hidden"></div>
 
+        <!-- REGLAS HOTEL -->
         <div class="hotel-rules">
           <div>
             <i class="fa-solid fa-door-open"></i>
             <strong>Check-in</strong>
             <span id="publicCheckinText">Desde 15h00</span>
           </div>
+
           <div>
             <i class="fa-solid fa-door-closed"></i>
             <strong>Check-out</strong>
             <span id="publicCheckoutText">Hasta 11h00</span>
           </div>
+
           <div>
             <i class="fa-solid fa-child"></i>
             <strong>Niños</strong>
@@ -136,43 +195,72 @@
         </div>
 
         <form id="reservationForm">
+
+          <!-- ALIMENTACIÓN -->
           <div class="subsection">
             <h4>Alimentación</h4>
             <div id="foodServicesList" class="service-options"></div>
           </div>
 
+          <!-- EXPERIENCIAS -->
           <div class="subsection">
             <h4>Experiencias y extras</h4>
             <div id="experienceServicesList" class="service-options"></div>
           </div>
 
+          <!-- DATOS TITULAR -->
           <div class="subsection">
             <h4>Datos del titular</h4>
 
             <div class="form-grid">
+
               <div class="field">
-                <label>Primer nombre</label>
-                <input type="text" id="firstName" required minlength="2" maxlength="30" />
+                <label for="firstName">Primer nombre</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  required
+                  minlength="2"
+                  maxlength="30"
+                  autocomplete="given-name"
+                />
               </div>
 
               <div class="field">
-                <label>Segundo nombre</label>
-                <input type="text" id="middleName" maxlength="30" />
+                <label for="middleName">Segundo nombre</label>
+                <input
+                  type="text"
+                  id="middleName"
+                  maxlength="30"
+                  autocomplete="additional-name"
+                />
               </div>
 
               <div class="field">
-                <label>Primer apellido</label>
-                <input type="text" id="lastName" required minlength="2" maxlength="30" />
+                <label for="lastName">Primer apellido</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  required
+                  minlength="2"
+                  maxlength="30"
+                  autocomplete="family-name"
+                />
               </div>
 
               <div class="field">
-                <label>Segundo apellido</label>
-                <input type="text" id="secondLastName" maxlength="30" />
+                <label for="secondLastName">Segundo apellido</label>
+                <input
+                  type="text"
+                  id="secondLastName"
+                  maxlength="30"
+                />
               </div>
 
               <div class="field">
-                <label>Tipo documento</label>
+                <label for="documentType">Tipo documento</label>
                 <select id="documentType" required>
+                  <option value="">Seleccionar</option>
                   <option value="cedula">Cédula</option>
                   <option value="pasaporte">Pasaporte</option>
                   <option value="ruc">RUC</option>
@@ -180,13 +268,20 @@
               </div>
 
               <div class="field">
-                <label>Número documento</label>
-                <input type="text" id="documentId" required minlength="6" maxlength="15" />
+                <label for="documentId">Número documento</label>
+                <input
+                  type="text"
+                  id="documentId"
+                  required
+                  minlength="6"
+                  maxlength="15"
+                />
               </div>
 
               <div class="field">
-                <label>Nacionalidad</label>
+                <label for="nationality">Nacionalidad</label>
                 <select id="nationality" required>
+                  <option value="">Seleccionar</option>
                   <option value="Ecuatoriana">Ecuatoriana</option>
                   <option value="Colombiana">Colombiana</option>
                   <option value="Peruana">Peruana</option>
@@ -200,23 +295,109 @@
               </div>
 
               <div class="field">
-                <label>Edad</label>
-                <select id="holderAge" required></select>
-              </div>
-
-              <div class="field">
-                <label>Sexo / género</label>
-                <select id="holderGender" required>
-                  <option value="Masculino">Masculino</option>
-                  <option value="Femenino">Femenino</option>
-                  <option value="Otro">Otro</option>
-                  <option value="Prefiere no decir">Prefiere no decir</option>
+                <label for="holderAge">Edad</label>
+                <select id="holderAge" required>
+                  <option value="">Seleccionar edad</option>
+                  <option value="18">18 años</option>
+                  <option value="19">19 años</option>
+                  <option value="20">20 años</option>
+                  <option value="21">21 años</option>
+                  <option value="22">22 años</option>
+                  <option value="23">23 años</option>
+                  <option value="24">24 años</option>
+                  <option value="25">25 años</option>
+                  <option value="26">26 años</option>
+                  <option value="27">27 años</option>
+                  <option value="28">28 años</option>
+                  <option value="29">29 años</option>
+                  <option value="30">30 años</option>
+                  <option value="31">31 años</option>
+                  <option value="32">32 años</option>
+                  <option value="33">33 años</option>
+                  <option value="34">34 años</option>
+                  <option value="35">35 años</option>
+                  <option value="36">36 años</option>
+                  <option value="37">37 años</option>
+                  <option value="38">38 años</option>
+                  <option value="39">39 años</option>
+                  <option value="40">40 años</option>
+                  <option value="41">41 años</option>
+                  <option value="42">42 años</option>
+                  <option value="43">43 años</option>
+                  <option value="44">44 años</option>
+                  <option value="45">45 años</option>
+                  <option value="46">46 años</option>
+                  <option value="47">47 años</option>
+                  <option value="48">48 años</option>
+                  <option value="49">49 años</option>
+                  <option value="50">50 años</option>
+                  <option value="51">51 años</option>
+                  <option value="52">52 años</option>
+                  <option value="53">53 años</option>
+                  <option value="54">54 años</option>
+                  <option value="55">55 años</option>
+                  <option value="56">56 años</option>
+                  <option value="57">57 años</option>
+                  <option value="58">58 años</option>
+                  <option value="59">59 años</option>
+                  <option value="60">60 años</option>
+                  <option value="61">61 años</option>
+                  <option value="62">62 años</option>
+                  <option value="63">63 años</option>
+                  <option value="64">64 años</option>
+                  <option value="65">65 años</option>
+                  <option value="66">66 años</option>
+                  <option value="67">67 años</option>
+                  <option value="68">68 años</option>
+                  <option value="69">69 años</option>
+                  <option value="70">70 años</option>
+                  <option value="71">71 años</option>
+                  <option value="72">72 años</option>
+                  <option value="73">73 años</option>
+                  <option value="74">74 años</option>
+                  <option value="75">75 años</option>
+                  <option value="76">76 años</option>
+                  <option value="77">77 años</option>
+                  <option value="78">78 años</option>
+                  <option value="79">79 años</option>
+                  <option value="80">80 años</option>
+                  <option value="81">81 años</option>
+                  <option value="82">82 años</option>
+                  <option value="83">83 años</option>
+                  <option value="84">84 años</option>
+                  <option value="85">85 años</option>
+                  <option value="86">86 años</option>
+                  <option value="87">87 años</option>
+                  <option value="88">88 años</option>
+                  <option value="89">89 años</option>
+                  <option value="90">90 años</option>
+                  <option value="91">91 años</option>
+                  <option value="92">92 años</option>
+                  <option value="93">93 años</option>
+                  <option value="94">94 años</option>
+                  <option value="95">95 años</option>
+                  <option value="96">96 años</option>
+                  <option value="97">97 años</option>
+                  <option value="98">98 años</option>
+                  <option value="99">99 años</option>
+                  <option value="100">100 años</option>
                 </select>
               </div>
 
               <div class="field">
-                <label>País</label>
+                <label for="holderGender">Sexo para registro</label>
+                <select id="holderGender" required>
+                  <option value="">Seleccionar</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+                  <option value="No especifica">No especifica</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="country">País</label>
                 <select id="country" required>
+                  <option value="">Seleccionar</option>
                   <option value="Ecuador">Ecuador</option>
                   <option value="Colombia">Colombia</option>
                   <option value="Perú">Perú</option>
@@ -230,7 +411,8 @@
               </div>
 
               <div class="field phone-field">
-                <label>WhatsApp</label>
+                <label for="phoneNumber">WhatsApp</label>
+
                 <div class="phone-row clean-phone">
                   <select id="countryCode" required>
                     <option value="+593" data-country="Ecuador" data-digits="10" selected>🇪🇨 +593</option>
@@ -242,22 +424,34 @@
                     <option value="+1" data-country="Estados Unidos" data-digits="10">🇺🇸 +1</option>
                     <option value="+34" data-country="España" data-digits="9">🇪🇸 +34</option>
                   </select>
-                  <input type="tel" id="phoneNumber" placeholder="0980000000" required />
+
+                  <input
+                    type="tel"
+                    id="phoneNumber"
+                    placeholder="0980000000"
+                    required
+                  />
                 </div>
               </div>
 
               <div class="field">
-                <label>Correo electrónico</label>
+                <label for="email">Correo electrónico</label>
                 <input type="email" id="email" required />
               </div>
 
               <div class="field">
-                <label>Ciudad</label>
-                <input type="text" id="city" required minlength="2" maxlength="40" />
+                <label for="city">Ciudad</label>
+                <input
+                  type="text"
+                  id="city"
+                  required
+                  minlength="2"
+                  maxlength="40"
+                />
               </div>
 
               <div class="field">
-                <label>Medio de llegada</label>
+                <label for="transportType">Medio de llegada</label>
                 <select id="transportType" required>
                   <option value="propio">Vehículo propio</option>
                   <option value="transporte_glamping">Transporte del glamping</option>
@@ -266,7 +460,7 @@
               </div>
 
               <div class="field hidden" id="arrivalTimeField">
-                <label>Hora estimada de llegada</label>
+                <label for="arrivalTime">Hora estimada de llegada</label>
                 <select id="arrivalTime">
                   <option value="">Seleccionar hora</option>
                   <option value="15:00">15h00</option>
@@ -277,25 +471,33 @@
                   <option value="20:00">20h00</option>
                 </select>
               </div>
+
             </div>
 
             <p class="helper-note" id="transportHelp">
-              Si usas transporte del glamping, el punto estratégico de salida desde Ibarra y la hora se coordinarán por WhatsApp.
+              Si usas transporte del glamping, el punto estratégico de salida desde Ibarra
+              y la hora se coordinarán por WhatsApp.
             </p>
           </div>
 
+          <!-- ACOMPAÑANTES -->
           <div class="subsection">
             <h4>Acompañantes obligatorios</h4>
-            <p class="helper-note">Los campos se generan según adultos y niños seleccionados.</p>
+            <p class="helper-note">
+              Los campos se generan según adultos y niños seleccionados.
+            </p>
+
             <div id="companionsList" class="companions-list"></div>
           </div>
 
+          <!-- SALUD -->
           <div class="subsection">
             <h4>Alergias y condiciones médicas</h4>
 
             <div class="form-grid">
+
               <div class="field">
-                <label>Alergias alimentarias</label>
+                <label for="foodAllergySelect">Alergias alimentarias</label>
                 <select id="foodAllergySelect">
                   <option value="Ninguna">Ninguna</option>
                   <option value="Lactosa">Lactosa</option>
@@ -309,12 +511,12 @@
               </div>
 
               <div class="field hidden" id="foodAllergyOtherBox">
-                <label>Especificar alergia</label>
+                <label for="foodAllergyOther">Especificar alergia</label>
                 <input type="text" id="foodAllergyOther" maxlength="80" />
               </div>
 
               <div class="field">
-                <label>Condición médica</label>
+                <label for="medicalSelect">Condición médica</label>
                 <select id="medicalSelect">
                   <option value="Ninguna">Ninguna</option>
                   <option value="Asma">Asma</option>
@@ -329,22 +531,31 @@
               </div>
 
               <div class="field hidden" id="medicalOtherBox">
-                <label>Especificar condición médica</label>
+                <label for="medicalOther">Especificar condición médica</label>
                 <input type="text" id="medicalOther" maxlength="80" />
               </div>
 
               <div class="field full-span">
-                <label>Observaciones adicionales</label>
-                <textarea id="notes" rows="3" maxlength="250" placeholder="Cumpleaños, aniversario, llegada especial, solicitudes..."></textarea>
+                <label for="notes">Observaciones adicionales</label>
+                <textarea
+                  id="notes"
+                  rows="3"
+                  maxlength="250"
+                  placeholder="Cumpleaños, aniversario, llegada especial, solicitudes..."
+                ></textarea>
               </div>
+
             </div>
           </div>
 
+          <!-- FACTURA -->
           <div class="subsection">
             <h4>Datos para factura</h4>
+
             <div class="form-grid">
+
               <div class="field">
-                <label>Tipo de factura</label>
+                <label for="invoiceType">Tipo de factura</label>
                 <select id="invoiceType">
                   <option value="consumidor_final">Consumidor final</option>
                   <option value="datos">Factura con datos</option>
@@ -352,68 +563,134 @@
               </div>
 
               <div class="field invoice-field hidden">
-                <label>Nombre / Razón social</label>
+                <label for="invoiceName">Nombre / Razón social</label>
                 <input type="text" id="invoiceName" maxlength="80" />
               </div>
 
               <div class="field invoice-field hidden">
-                <label>Cédula / RUC / Pasaporte</label>
+                <label for="invoiceDocument">Cédula / RUC / Pasaporte</label>
                 <input type="text" id="invoiceDocument" maxlength="15" />
               </div>
 
               <div class="field invoice-field hidden">
-                <label>Dirección</label>
+                <label for="invoiceAddress">Dirección</label>
                 <input type="text" id="invoiceAddress" maxlength="120" />
               </div>
 
               <div class="field invoice-field hidden">
-                <label>Correo factura</label>
+                <label for="invoiceEmail">Correo factura</label>
                 <input type="email" id="invoiceEmail" />
               </div>
+
             </div>
           </div>
 
+          <!-- RESUMEN PAGO -->
           <div class="payment-summary">
             <h4>Resumen de pago</h4>
-            <div class="summary-row"><span>Precio por noche</span><strong id="nightPrice">$0.00</strong></div>
-            <div class="summary-row"><span>Noches</span><strong id="nightsCount">0</strong></div>
-            <div class="summary-row"><span>Hospedaje</span><strong id="lodgingTotal">$0.00</strong></div>
-            <div class="summary-row"><span>Servicios</span><strong id="servicesTotal">$0.00</strong></div>
-            <div class="summary-row total-row"><span>Total reserva</span><strong id="totalReservation">$0.00</strong></div>
-            <div class="summary-row"><span id="depositLabel">Abono requerido</span><strong id="requiredDeposit">$0.00</strong></div>
-            <div class="summary-row"><span>Saldo al check-in</span><strong id="pendingBalance">$0.00</strong></div>
-            <p class="payment-note">La fecha queda separada como pendiente por 48 horas. Si no se confirma el pago, se libera automáticamente.</p>
+
+            <div class="summary-row">
+              <span>Precio por noche</span>
+              <strong id="nightPrice">$0.00</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Noches</span>
+              <strong id="nightsCount">0</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Hospedaje</span>
+              <strong id="lodgingTotal">$0.00</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Servicios</span>
+              <strong id="servicesTotal">$0.00</strong>
+            </div>
+
+            <div class="summary-row total-row">
+              <span>Total reserva</span>
+              <strong id="totalReservation">$0.00</strong>
+            </div>
+
+            <div class="summary-row">
+              <span id="depositLabel">Abono requerido</span>
+              <strong id="requiredDeposit">$0.00</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Saldo al check-in</span>
+              <strong id="pendingBalance">$0.00</strong>
+            </div>
+
+            <p class="payment-note">
+              La fecha queda separada como pendiente por 48 horas.
+              Si no se confirma el pago, se libera automáticamente.
+            </p>
           </div>
 
+          <!-- POLÍTICAS -->
           <div class="policies-box">
             <h4>Políticas obligatorias</h4>
+
             <div class="policy-text">
-              <p><strong>Reserva:</strong> Para confirmar la reserva se requiere el abono configurado por administración.</p>
-              <p><strong>Cancelación:</strong> Si el huésped cancela después de abonar, se aplicará una penalidad equivalente al 50% del valor pagado o abonado, según corresponda.</p>
-              <p><strong>Devoluciones:</strong> Si existiera valor a devolver, administración gestionará la devolución según la forma de pago y registro interno.</p>
-              <p><strong>Daños:</strong> Daños menores tendrán una multa base de $150. Daños superiores serán cobrados según evaluación administrativa.</p>
-              <p><strong>Datos:</strong> La información ingresada será usada para fines administrativos, seguridad, control de reserva, facturación y atención del hospedaje.</p>
+              <p>
+                <strong>Reserva:</strong>
+                Para confirmar la reserva se requiere el abono configurado por administración.
+              </p>
+
+              <p>
+                <strong>Cancelación:</strong>
+                Si el huésped cancela después de abonar, se aplicará una penalidad
+                equivalente al 50% del valor pagado o abonado, según corresponda.
+              </p>
+
+              <p>
+                <strong>Devoluciones:</strong>
+                Si existiera valor a devolver, administración gestionará la devolución
+                según la forma de pago y registro interno.
+              </p>
+
+              <p>
+                <strong>Daños:</strong>
+                Daños menores tendrán una multa base de $150. Daños superiores serán
+                cobrados según evaluación administrativa.
+              </p>
+
+              <p>
+                <strong>Datos:</strong>
+                La información ingresada será usada para fines administrativos,
+                seguridad, control de reserva, facturación y atención del hospedaje.
+              </p>
             </div>
 
             <label class="checkbox-line">
               <input type="checkbox" id="acceptPolicies" required />
-              <span>Acepto las políticas de reserva, cancelación, daños, facturación y uso administrativo de datos.</span>
+              <span>
+                Acepto las políticas de reserva, cancelación, daños, facturación
+                y uso administrativo de datos.
+              </span>
             </label>
           </div>
 
           <button type="submit" class="primary-btn full-btn">
-            <i class="fa-brands fa-whatsapp"></i> Generar reserva y continuar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i>
+            Generar reserva y continuar por WhatsApp
           </button>
+
         </form>
       </div>
     </section>
 
+    <!-- INFORMACIÓN -->
     <section class="info-section">
       <div class="section-heading">
         <h3>Información importante</h3>
       </div>
 
       <div class="info-grid">
+
         <article class="info-card">
           <i class="fa-solid fa-calendar-check"></i>
           <h4>Reserva pendiente</h4>
@@ -431,6 +708,7 @@
           <h4>Ticket y factura</h4>
           <p>Al check-out se genera un ticket interno y datos para facturación.</p>
         </article>
+
       </div>
     </section>
 
@@ -438,35 +716,61 @@
       <p id="footerBusinessName">Glamping Boutique</p>
       <small>Sistema administrable para hospedajes tipo glamping.</small>
     </footer>
+
   </main>
 
+  <!-- =========================
+       LOGIN
+  ========================== -->
   <section id="loginPanel" class="admin-login hidden">
     <div class="login-card">
-      <button id="closeLoginBtn" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
-      <div class="login-icon"><i class="fa-solid fa-lock"></i></div>
+
+      <button id="closeLoginBtn" class="close-panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="login-icon">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+
       <h2>Acceso interno</h2>
       <p>Administrador o Housekeeping.</p>
 
       <form id="loginForm">
+
         <div class="field">
-          <label>Usuario</label>
+          <label for="loginUser">Usuario</label>
           <input type="text" id="loginUser" required />
         </div>
+
         <div class="field">
-          <label>Contraseña</label>
+          <label for="loginPass">Contraseña</label>
           <input type="password" id="loginPass" required />
         </div>
-        <button type="submit" class="primary-btn full-btn">Ingresar</button>
+
+        <button type="submit" class="primary-btn full-btn">
+          Ingresar
+        </button>
+
       </form>
 
-      <small class="demo-note">Admin: admin / admin123 · Housekeeping: housekeeping / limpieza123</small>
+      <small class="demo-note">
+        Admin: admin / admin123 · Housekeeping: housekeeping / limpieza123
+      </small>
+
     </div>
   </section>
 
+  <!-- =========================
+       ADMIN PANEL
+  ========================== -->
   <section id="adminPanel" class="admin-panel hidden">
+
     <aside class="admin-sidebar">
+
       <div class="admin-brand">
         <i class="fa-solid fa-mountain-sun"></i>
+
         <div>
           <h3 id="panelRoleTitle">Admin</h3>
           <small>Glamping Manager</small>
@@ -474,58 +778,138 @@
       </div>
 
       <nav class="admin-menu" id="adminMenu">
-        <button class="admin-nav active" data-section="dashboard"><i class="fa-solid fa-chart-line"></i> Dashboard</button>
-        <button class="admin-nav" data-section="calendar"><i class="fa-solid fa-calendar-days"></i> Calendario</button>
-        <button class="admin-nav" data-section="manual"><i class="fa-solid fa-plus"></i> Nueva reserva</button>
-        <button class="admin-nav" data-section="bookings"><i class="fa-solid fa-list-check"></i> Reservas</button>
-        <button class="admin-nav" data-section="housekeeping"><i class="fa-solid fa-broom"></i> Housekeeping</button>
-        <button class="admin-nav" data-section="units"><i class="fa-solid fa-house-chimney-window"></i> Glampings</button>
-        <button class="admin-nav" data-section="services"><i class="fa-solid fa-utensils"></i> Servicios</button>
-        <button class="admin-nav" data-section="finance"><i class="fa-solid fa-coins"></i> Finanzas</button>
-        <button class="admin-nav" data-section="alerts"><i class="fa-solid fa-bell"></i> Fechas especiales</button>
-        <button class="admin-nav" data-section="settings"><i class="fa-solid fa-gear"></i> Configuración</button>
+        <button class="admin-nav active" data-section="dashboard">
+          <i class="fa-solid fa-chart-line"></i>
+          Dashboard
+        </button>
+
+        <button class="admin-nav" data-section="calendar">
+          <i class="fa-solid fa-calendar-days"></i>
+          Calendario
+        </button>
+
+        <button class="admin-nav" data-section="manual">
+          <i class="fa-solid fa-plus"></i>
+          Nueva reserva
+        </button>
+
+        <button class="admin-nav" data-section="bookings">
+          <i class="fa-solid fa-list-check"></i>
+          Reservas
+        </button>
+
+        <button class="admin-nav" data-section="housekeeping">
+          <i class="fa-solid fa-broom"></i>
+          Housekeeping
+        </button>
+
+        <button class="admin-nav" data-section="units">
+          <i class="fa-solid fa-house-chimney-window"></i>
+          Glampings
+        </button>
+
+        <button class="admin-nav" data-section="services">
+          <i class="fa-solid fa-utensils"></i>
+          Servicios
+        </button>
+
+        <button class="admin-nav" data-section="finance">
+          <i class="fa-solid fa-coins"></i>
+          Finanzas
+        </button>
+
+        <button class="admin-nav" data-section="alerts">
+          <i class="fa-solid fa-bell"></i>
+          Fechas especiales
+        </button>
+
+        <button class="admin-nav" data-section="settings">
+          <i class="fa-solid fa-gear"></i>
+          Configuración
+        </button>
       </nav>
 
       <button id="logoutBtn" class="logout-btn">
-        <i class="fa-solid fa-right-from-bracket"></i> Salir
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Salir
       </button>
+
     </aside>
 
     <div class="admin-content">
+
       <header class="admin-topbar">
         <div>
           <h2 id="adminSectionTitle">Dashboard</h2>
-          <p id="adminSectionSubtitle">Control interno de operación, reservas y rentabilidad.</p>
+          <p id="adminSectionSubtitle">
+            Control interno de operación, reservas y rentabilidad.
+          </p>
         </div>
 
         <button id="backToPublicBtn" class="secondary-btn">
-          <i class="fa-solid fa-eye"></i> Ver sitio
+          <i class="fa-solid fa-eye"></i>
+          Ver sitio
         </button>
       </header>
 
+      <!-- DASHBOARD -->
       <section id="admin-dashboard" class="admin-section active">
+
         <div class="stats-grid">
-          <article class="stat-card"><span>Pendientes</span><strong id="statPending">0</strong></article>
-          <article class="stat-card"><span>Confirmadas / estadía</span><strong id="statConfirmed">0</strong></article>
-          <article class="stat-card"><span>Noches vendidas</span><strong id="statNights">0</strong></article>
-          <article class="stat-card"><span>Ganancia neta</span><strong id="statNet">$0</strong></article>
+          <article class="stat-card">
+            <span>Pendientes</span>
+            <strong id="statPending">0</strong>
+          </article>
+
+          <article class="stat-card">
+            <span>Confirmadas / estadía</span>
+            <strong id="statConfirmed">0</strong>
+          </article>
+
+          <article class="stat-card">
+            <span>Noches vendidas</span>
+            <strong id="statNights">0</strong>
+          </article>
+
+          <article class="stat-card">
+            <span>Ganancia neta</span>
+            <strong id="statNet">$0</strong>
+          </article>
         </div>
 
         <div class="admin-card">
           <h3>Reservas recientes</h3>
           <div id="recentBookings" class="admin-list"></div>
         </div>
+
       </section>
 
+      <!-- CALENDARIO -->
       <section id="admin-calendar" class="admin-section">
+
         <div class="admin-card">
+
           <div class="admin-card-head">
-            <h3>Calendario operativo</h3>
+            <h3>Calendario operativo / Front Desk</h3>
+
             <div class="calendar-controls">
-              <button id="prevMonthBtn" class="secondary-btn small-btn"><i class="fa-solid fa-chevron-left"></i></button>
+              <button id="prevMonthBtn" class="secondary-btn small-btn">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+
               <strong id="calendarMonthTitle">Mes</strong>
-              <button id="nextMonthBtn" class="secondary-btn small-btn"><i class="fa-solid fa-chevron-right"></i></button>
+
+              <button id="nextMonthBtn" class="secondary-btn small-btn">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
             </div>
+          </div>
+
+          <div class="frontdesk-note">
+            <strong>Lectura Front Desk:</strong>
+            cada fila representa un glamping. Si una fecha aparece ocupada en una fila,
+            revisa las demás filas porque otro glamping puede estar libre para esas mismas fechas.
+            Haz clic en una fecha libre para iniciar una reserva manual.
           </div>
 
           <div class="calendar-legend">
@@ -535,37 +919,46 @@
             <span><b class="dot checked_in"></b> En estadía</span>
             <span><b class="dot cleaning"></b> Limpieza</span>
             <span><b class="dot completed"></b> Completada</span>
-            <span><b class="dot cancelled"></b> Cancelada</span>
+            <span><b class="dot cancelled"></b> Cancelada / expirada</span>
           </div>
 
-          <p class="helper-note">Haz clic en una fecha disponible para iniciar una reserva manual desde esa fecha.</p>
           <div id="calendarGrid" class="calendar-grid"></div>
+
         </div>
+
       </section>
 
+      <!-- NUEVA RESERVA MANUAL -->
       <section id="admin-manual" class="admin-section">
+
         <div class="admin-card">
+
           <h3>Nueva reserva manual</h3>
-          <p class="helper-note">Para clientes que reservan por WhatsApp o llamada. También permite descuentos y servicios.</p>
+
+          <p class="helper-note">
+            Para clientes que reservan por WhatsApp o llamada.
+            Permite registrar acompañantes, servicios, fechas especiales, descuentos y abonos.
+          </p>
 
           <form id="manualBookingForm" class="admin-form-grid">
+
             <div class="field">
-              <label>Glamping</label>
+              <label for="manualUnit">Glamping</label>
               <select id="manualUnit" required></select>
             </div>
 
             <div class="field">
-              <label>Ingreso</label>
+              <label for="manualCheckIn">Ingreso</label>
               <input type="date" id="manualCheckIn" required />
             </div>
 
             <div class="field">
-              <label>Salida</label>
+              <label for="manualCheckOut">Salida</label>
               <input type="date" id="manualCheckOut" required />
             </div>
 
             <div class="field">
-              <label>Adultos</label>
+              <label for="manualAdults">Adultos</label>
               <select id="manualAdults">
                 <option value="1">1 adulto</option>
                 <option value="2" selected>2 adultos</option>
@@ -573,7 +966,7 @@
             </div>
 
             <div class="field">
-              <label>Niños</label>
+              <label for="manualChildren">Niños</label>
               <select id="manualChildren">
                 <option value="0" selected>0 niños</option>
                 <option value="1">1 niño</option>
@@ -582,37 +975,121 @@
             </div>
 
             <div class="field">
-              <label>Primer nombre titular</label>
+              <label for="manualFirstName">Primer nombre titular</label>
               <input type="text" id="manualFirstName" required />
             </div>
 
             <div class="field">
-              <label>Primer apellido titular</label>
+              <label for="manualLastName">Primer apellido titular</label>
               <input type="text" id="manualLastName" required />
             </div>
 
             <div class="field">
-              <label>Documento</label>
+              <label for="manualDocument">Documento</label>
               <input type="text" id="manualDocument" required />
             </div>
 
             <div class="field">
-              <label>Edad titular</label>
-              <select id="manualAge" required></select>
-            </div>
-
-            <div class="field">
-              <label>Sexo / género</label>
-              <select id="manualGender">
-                <option value="Masculino">Masculino</option>
-                <option value="Femenino">Femenino</option>
-                <option value="Otro">Otro</option>
-                <option value="Prefiere no decir">Prefiere no decir</option>
+              <label for="manualAge">Edad titular</label>
+              <select id="manualAge" required>
+                <option value="">Seleccionar edad</option>
+                <option value="18">18 años</option>
+                <option value="19">19 años</option>
+                <option value="20">20 años</option>
+                <option value="21">21 años</option>
+                <option value="22">22 años</option>
+                <option value="23">23 años</option>
+                <option value="24">24 años</option>
+                <option value="25">25 años</option>
+                <option value="26">26 años</option>
+                <option value="27">27 años</option>
+                <option value="28">28 años</option>
+                <option value="29">29 años</option>
+                <option value="30">30 años</option>
+                <option value="31">31 años</option>
+                <option value="32">32 años</option>
+                <option value="33">33 años</option>
+                <option value="34">34 años</option>
+                <option value="35">35 años</option>
+                <option value="36">36 años</option>
+                <option value="37">37 años</option>
+                <option value="38">38 años</option>
+                <option value="39">39 años</option>
+                <option value="40">40 años</option>
+                <option value="41">41 años</option>
+                <option value="42">42 años</option>
+                <option value="43">43 años</option>
+                <option value="44">44 años</option>
+                <option value="45">45 años</option>
+                <option value="46">46 años</option>
+                <option value="47">47 años</option>
+                <option value="48">48 años</option>
+                <option value="49">49 años</option>
+                <option value="50">50 años</option>
+                <option value="51">51 años</option>
+                <option value="52">52 años</option>
+                <option value="53">53 años</option>
+                <option value="54">54 años</option>
+                <option value="55">55 años</option>
+                <option value="56">56 años</option>
+                <option value="57">57 años</option>
+                <option value="58">58 años</option>
+                <option value="59">59 años</option>
+                <option value="60">60 años</option>
+                <option value="61">61 años</option>
+                <option value="62">62 años</option>
+                <option value="63">63 años</option>
+                <option value="64">64 años</option>
+                <option value="65">65 años</option>
+                <option value="66">66 años</option>
+                <option value="67">67 años</option>
+                <option value="68">68 años</option>
+                <option value="69">69 años</option>
+                <option value="70">70 años</option>
+                <option value="71">71 años</option>
+                <option value="72">72 años</option>
+                <option value="73">73 años</option>
+                <option value="74">74 años</option>
+                <option value="75">75 años</option>
+                <option value="76">76 años</option>
+                <option value="77">77 años</option>
+                <option value="78">78 años</option>
+                <option value="79">79 años</option>
+                <option value="80">80 años</option>
+                <option value="81">81 años</option>
+                <option value="82">82 años</option>
+                <option value="83">83 años</option>
+                <option value="84">84 años</option>
+                <option value="85">85 años</option>
+                <option value="86">86 años</option>
+                <option value="87">87 años</option>
+                <option value="88">88 años</option>
+                <option value="89">89 años</option>
+                <option value="90">90 años</option>
+                <option value="91">91 años</option>
+                <option value="92">92 años</option>
+                <option value="93">93 años</option>
+                <option value="94">94 años</option>
+                <option value="95">95 años</option>
+                <option value="96">96 años</option>
+                <option value="97">97 años</option>
+                <option value="98">98 años</option>
+                <option value="99">99 años</option>
+                <option value="100">100 años</option>
               </select>
             </div>
 
             <div class="field">
-              <label>Código país</label>
+              <label for="manualGender">Sexo para registro</label>
+              <select id="manualGender">
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="No especifica">No especifica</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="manualWhatsappCode">Código país</label>
               <select id="manualWhatsappCode">
                 <option value="+593" data-digits="10" selected>🇪🇨 +593</option>
                 <option value="+57" data-digits="10">🇨🇴 +57</option>
@@ -624,8 +1101,16 @@
             </div>
 
             <div class="field">
-              <label>Número WhatsApp</label>
+              <label for="manualPhone">Número WhatsApp</label>
               <input type="text" id="manualPhone" placeholder="0980000000" required />
+            </div>
+
+            <div class="field full-span">
+              <label>Acompañantes de la reserva manual</label>
+              <p class="helper-note">
+                Se generan automáticamente según adultos y niños seleccionados.
+              </p>
+              <div id="manualCompanionsList" class="companions-list"></div>
             </div>
 
             <div class="field full-span">
@@ -633,18 +1118,23 @@
               <div id="manualServicesList" class="service-options compact"></div>
             </div>
 
+            <div class="field full-span">
+              <label>Fechas especiales / paquetes promocionales</label>
+              <div id="manualSpecialsList" class="service-options compact"></div>
+            </div>
+
             <div class="field">
-              <label>Descuento en $</label>
+              <label for="manualDiscount">Descuento en $</label>
               <input type="number" id="manualDiscount" value="0" min="0" step="0.01" />
             </div>
 
             <div class="field">
-              <label>Abono recibido</label>
+              <label for="manualPaid">Abono recibido</label>
               <input type="number" id="manualPaid" value="0" min="0" step="0.01" />
             </div>
 
             <div class="field">
-              <label>Estado</label>
+              <label for="manualStatus">Estado</label>
               <select id="manualStatus">
                 <option value="pending">Pendiente de pago</option>
                 <option value="confirmed">Confirmada</option>
@@ -652,20 +1142,33 @@
             </div>
 
             <div class="field full-span">
-              <label>Notas administrativas</label>
+              <label for="manualNotes">Notas administrativas</label>
               <textarea id="manualNotes" rows="3"></textarea>
             </div>
 
-            <button type="submit" class="primary-btn">Crear reserva manual</button>
+            <button type="submit" class="primary-btn">
+              Crear reserva manual
+            </button>
+
           </form>
+
         </div>
       </section>
 
+      <!-- RESERVAS -->
       <section id="admin-bookings" class="admin-section">
+
         <div class="admin-card">
+
           <h3>Reservas</h3>
+
           <div class="filters-row">
-            <input type="text" id="bookingSearch" placeholder="Buscar por código, nombre o WhatsApp" />
+            <input
+              type="text"
+              id="bookingSearch"
+              placeholder="Buscar por código, nombre o WhatsApp"
+            />
+
             <select id="bookingStatusFilter">
               <option value="all">Todas</option>
               <option value="pending">Pendientes</option>
@@ -680,82 +1183,185 @@
               <option value="expired">Expiradas</option>
             </select>
           </div>
+
           <div id="adminBookingsList" class="admin-list"></div>
+
         </div>
+
       </section>
 
+      <!-- HOUSEKEEPING -->
       <section id="admin-housekeeping" class="admin-section">
+
         <div class="admin-card">
+
           <h3>Housekeeping</h3>
-          <p class="helper-note">Control de limpieza, daños, mantenimiento y estado real de cada glamping.</p>
+
+          <p class="helper-note">
+            Control de limpieza, daños, mantenimiento, faltantes y estado real de cada glamping.
+          </p>
+
           <div id="housekeepingList" class="admin-list"></div>
+
         </div>
+
       </section>
 
+      <!-- GLAMPINGS -->
       <section id="admin-units" class="admin-section">
+
         <div class="admin-card">
+
           <div class="admin-card-head">
             <h3>Glampings</h3>
-            <button id="addUnitBtn" class="primary-btn small-btn"><i class="fa-solid fa-plus"></i> Agregar</button>
+
+            <button id="addUnitBtn" class="primary-btn small-btn">
+              <i class="fa-solid fa-plus"></i>
+              Agregar
+            </button>
           </div>
+
           <div id="adminUnitsList" class="admin-list"></div>
+
         </div>
+
       </section>
 
+      <!-- SERVICIOS -->
       <section id="admin-services" class="admin-section">
+
         <div class="admin-card">
+
           <div class="admin-card-head">
             <h3>Servicios y alimentación</h3>
-            <button id="addServiceBtn" class="primary-btn small-btn"><i class="fa-solid fa-plus"></i> Agregar servicio</button>
+
+            <button id="addServiceBtn" class="primary-btn small-btn">
+              <i class="fa-solid fa-plus"></i>
+              Agregar servicio
+            </button>
           </div>
+
           <div id="adminServicesList" class="admin-list"></div>
+
         </div>
+
       </section>
 
+      <!-- FINANZAS -->
       <section id="admin-finance" class="admin-section">
+
         <div class="stats-grid">
-          <article class="stat-card"><span>Ingresos brutos</span><strong id="financeIncome">$0</strong></article>
-          <article class="stat-card"><span>Devoluciones</span><strong id="financeRefunds">$0</strong></article>
-          <article class="stat-card"><span>Egresos</span><strong id="financeExpenses">$0</strong></article>
-          <article class="stat-card"><span>Ganancia neta</span><strong id="financeNet">$0</strong></article>
+
+          <article class="stat-card">
+            <span>Ingresos brutos</span>
+            <strong id="financeIncome">$0</strong>
+          </article>
+
+          <article class="stat-card">
+            <span>Devoluciones</span>
+            <strong id="financeRefunds">$0</strong>
+          </article>
+
+          <article class="stat-card">
+            <span>Egresos</span>
+            <strong id="financeExpenses">$0</strong>
+          </article>
+
+          <article class="stat-card">
+            <span>Ganancia neta</span>
+            <strong id="financeNet">$0</strong>
+          </article>
+
         </div>
 
         <div class="admin-card">
+
           <div class="admin-card-head">
             <h3>Egresos</h3>
-            <button id="addExpenseBtn" class="primary-btn small-btn"><i class="fa-solid fa-plus"></i> Agregar egreso</button>
+
+            <button id="addExpenseBtn" class="primary-btn small-btn">
+              <i class="fa-solid fa-plus"></i>
+              Agregar egreso
+            </button>
           </div>
+
           <div id="expensesList" class="admin-list"></div>
+
         </div>
+
       </section>
 
+      <!-- FECHAS ESPECIALES -->
       <section id="admin-alerts" class="admin-section">
+
         <div class="admin-card">
+
           <div class="admin-card-head">
             <h3>Fechas especiales y alertas</h3>
-            <button id="addSpecialDateBtn" class="primary-btn small-btn"><i class="fa-solid fa-plus"></i> Agregar fecha</button>
+
+            <button id="addSpecialDateBtn" class="primary-btn small-btn">
+              <i class="fa-solid fa-plus"></i>
+              Agregar fecha
+            </button>
           </div>
+
           <div id="specialDatesList" class="admin-list"></div>
+
         </div>
+
       </section>
 
+      <!-- CONFIGURACIÓN -->
       <section id="admin-settings" class="admin-section">
+
         <div class="admin-card">
+
           <h3>Configuración del negocio</h3>
 
           <form id="settingsForm" class="admin-form-grid">
-            <div class="field"><label>Nombre comercial</label><input type="text" id="settingBusinessName" /></div>
-            <div class="field"><label>Subtítulo</label><input type="text" id="settingSubtitle" /></div>
-            <div class="field full-span"><label>Logo URL</label><input type="url" id="settingLogoUrl" /></div>
-            <div class="field full-span"><label>Foto principal URL</label><input type="url" id="settingHeroImage" /></div>
-
-            <div class="field"><label>WhatsApp código país</label><input type="text" id="settingWhatsappCode" placeholder="+593" /></div>
-            <div class="field"><label>WhatsApp número</label><input type="text" id="settingWhatsappNumber" placeholder="0980000000" /></div>
-            <div class="field"><label>Check-in</label><input type="time" id="settingCheckin" /></div>
-            <div class="field"><label>Check-out</label><input type="time" id="settingCheckout" /></div>
 
             <div class="field">
-              <label>Porcentaje de abono</label>
+              <label for="settingBusinessName">Nombre comercial</label>
+              <input type="text" id="settingBusinessName" />
+            </div>
+
+            <div class="field">
+              <label for="settingSubtitle">Subtítulo</label>
+              <input type="text" id="settingSubtitle" />
+            </div>
+
+            <div class="field full-span">
+              <label for="settingLogoUrl">Logo URL</label>
+              <input type="url" id="settingLogoUrl" />
+            </div>
+
+            <div class="field full-span">
+              <label for="settingHeroImage">Foto principal URL</label>
+              <input type="url" id="settingHeroImage" />
+            </div>
+
+            <div class="field">
+              <label for="settingWhatsappCode">WhatsApp código país</label>
+              <input type="text" id="settingWhatsappCode" placeholder="+593" />
+            </div>
+
+            <div class="field">
+              <label for="settingWhatsappNumber">WhatsApp número</label>
+              <input type="text" id="settingWhatsappNumber" placeholder="0980000000" />
+            </div>
+
+            <div class="field">
+              <label for="settingCheckin">Check-in</label>
+              <input type="time" id="settingCheckin" />
+            </div>
+
+            <div class="field">
+              <label for="settingCheckout">Check-out</label>
+              <input type="time" id="settingCheckout" />
+            </div>
+
+            <div class="field">
+              <label for="settingDeposit">Porcentaje de abono</label>
               <select id="settingDeposit">
                 <option value="40">40%</option>
                 <option value="50">50%</option>
@@ -765,7 +1371,7 @@
             </div>
 
             <div class="field">
-              <label>Tiempo máximo pago pendiente</label>
+              <label for="settingDeadlineHours">Tiempo máximo pago pendiente</label>
               <select id="settingDeadlineHours">
                 <option value="24">24 horas</option>
                 <option value="48">48 horas</option>
@@ -773,170 +1379,625 @@
               </select>
             </div>
 
-            <div class="field"><label>Usuario administrador</label><input type="text" id="settingAdminUser" /></div>
-            <div class="field"><label>Clave administrador</label><input type="text" id="settingAdminPass" /></div>
-            <div class="field"><label>Usuario Housekeeping</label><input type="text" id="settingHouseUser" /></div>
-            <div class="field"><label>Clave Housekeeping</label><input type="text" id="settingHousePass" /></div>
-            <div class="field full-span"><label>Nombre encargado Housekeeping</label><input type="text" id="settingHouseName" /></div>
-
-            <div class="field full-span section-label">Datos empresariales para ticket / facturación</div>
-
-            <div class="field"><label>Razón social</label><input type="text" id="settingLegalName" /></div>
-            <div class="field"><label>RUC</label><input type="text" id="settingRuc" /></div>
-            <div class="field"><label>Dirección matriz</label><input type="text" id="settingMatrixAddress" /></div>
-            <div class="field"><label>Dirección establecimiento</label><input type="text" id="settingBranchAddress" /></div>
-            <div class="field"><label>Correo facturación</label><input type="email" id="settingBillingEmail" /></div>
-            <div class="field"><label>Teléfono empresa</label><input type="text" id="settingBusinessPhone" /></div>
-            <div class="field"><label>Establecimiento</label><input type="text" id="settingEstablishment" placeholder="001" /></div>
-            <div class="field"><label>Punto emisión</label><input type="text" id="settingEmissionPoint" placeholder="001" /></div>
-            <div class="field"><label>Secuencial inicial</label><input type="number" id="settingSequential" min="1" /></div>
             <div class="field">
-              <label>Obligado contabilidad</label>
+              <label for="settingAdminUser">Usuario administrador</label>
+              <input type="text" id="settingAdminUser" />
+            </div>
+
+            <div class="field">
+              <label for="settingAdminPass">Clave administrador</label>
+              <input type="text" id="settingAdminPass" />
+            </div>
+
+            <div class="field">
+              <label for="settingHouseUser">Usuario Housekeeping</label>
+              <input type="text" id="settingHouseUser" />
+            </div>
+
+            <div class="field">
+              <label for="settingHousePass">Clave Housekeeping</label>
+              <input type="text" id="settingHousePass" />
+            </div>
+
+            <div class="field full-span">
+              <label for="settingHouseName">Nombre encargado Housekeeping</label>
+              <input type="text" id="settingHouseName" />
+            </div>
+
+            <div class="field full-span section-label">
+              Datos empresariales para ticket / facturación
+            </div>
+
+            <div class="field">
+              <label for="settingLegalName">Razón social</label>
+              <input type="text" id="settingLegalName" />
+            </div>
+
+            <div class="field">
+              <label for="settingRuc">RUC</label>
+              <input type="text" id="settingRuc" />
+            </div>
+
+            <div class="field">
+              <label for="settingMatrixAddress">Dirección matriz</label>
+              <input type="text" id="settingMatrixAddress" />
+            </div>
+
+            <div class="field">
+              <label for="settingBranchAddress">Dirección establecimiento</label>
+              <input type="text" id="settingBranchAddress" />
+            </div>
+
+            <div class="field">
+              <label for="settingBillingEmail">Correo facturación</label>
+              <input type="email" id="settingBillingEmail" />
+            </div>
+
+            <div class="field">
+              <label for="settingBusinessPhone">Teléfono empresa</label>
+              <input type="text" id="settingBusinessPhone" />
+            </div>
+
+            <div class="field">
+              <label for="settingEstablishment">Establecimiento</label>
+              <input type="text" id="settingEstablishment" placeholder="001" />
+            </div>
+
+            <div class="field">
+              <label for="settingEmissionPoint">Punto emisión</label>
+              <input type="text" id="settingEmissionPoint" placeholder="001" />
+            </div>
+
+            <div class="field">
+              <label for="settingSequential">Secuencial inicial</label>
+              <input type="number" id="settingSequential" min="1" />
+            </div>
+
+            <div class="field">
+              <label for="settingAccounting">Obligado contabilidad</label>
               <select id="settingAccounting">
                 <option value="No">No</option>
                 <option value="Sí">Sí</option>
               </select>
             </div>
 
-            <button type="submit" class="primary-btn">Guardar configuración</button>
+            <button type="submit" class="primary-btn">
+              Guardar configuración
+            </button>
+
           </form>
+
         </div>
+
       </section>
+
     </div>
+
   </section>
 
+  <!-- =========================
+       MODAL GLAMPING
+  ========================== -->
   <section id="unitModal" class="modal hidden">
     <div class="modal-card">
-      <button id="closeUnitModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+
+      <button id="closeUnitModal" class="close-panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <h3 id="unitModalTitle">Editar glamping</h3>
+
       <form id="unitForm" class="admin-form-grid">
+
         <input type="hidden" id="unitId" />
-        <div class="field"><label>Nombre</label><input type="text" id="unitName" required /></div>
-        <div class="field"><label>Precio por noche</label><input type="number" id="unitPrice" required /></div>
-        <div class="field"><label>Adultos máximo</label><input type="number" id="unitAdults" min="1" max="2" required /></div>
-        <div class="field"><label>Niños máximo</label><input type="number" id="unitChildren" min="0" max="2" required /></div>
-        <div class="field full-span"><label>Descripción ES</label><textarea id="unitDescriptionEs" rows="3"></textarea></div>
-        <div class="field full-span"><label>Descripción EN</label><textarea id="unitDescriptionEn" rows="3"></textarea></div>
-        <div class="field full-span"><label>Foto principal URL</label><input type="url" id="unitImage" /></div>
-        <div class="field full-span"><label>Servicios incluidos, separados por coma</label><input type="text" id="unitFeatures" /></div>
-        <div class="field"><label>Estado</label><select id="unitStatus"><option value="active">Activo</option><option value="inactive">Inactivo</option><option value="maintenance">Mantenimiento</option></select></div>
-        <button type="submit" class="primary-btn">Guardar glamping</button>
+
+        <div class="field">
+          <label for="unitName">Nombre</label>
+          <input type="text" id="unitName" required />
+        </div>
+
+        <div class="field">
+          <label for="unitPrice">Precio por noche</label>
+          <input type="number" id="unitPrice" required />
+        </div>
+
+        <div class="field">
+          <label for="unitAdults">Adultos máximo</label>
+          <input type="number" id="unitAdults" min="1" max="2" required />
+        </div>
+
+        <div class="field">
+          <label for="unitChildren">Niños máximo</label>
+          <input type="number" id="unitChildren" min="0" max="2" required />
+        </div>
+
+        <div class="field full-span">
+          <label for="unitDescriptionEs">Descripción ES</label>
+          <textarea id="unitDescriptionEs" rows="3"></textarea>
+        </div>
+
+        <div class="field full-span">
+          <label for="unitDescriptionEn">Descripción EN</label>
+          <textarea id="unitDescriptionEn" rows="3"></textarea>
+        </div>
+
+        <div class="field full-span">
+          <label for="unitImage">Foto principal URL</label>
+          <input type="url" id="unitImage" />
+        </div>
+
+        <div class="field full-span">
+          <label for="unitFeatures">Servicios incluidos, separados por coma</label>
+          <input type="text" id="unitFeatures" />
+        </div>
+
+        <div class="field">
+          <label for="unitStatus">Estado</label>
+          <select id="unitStatus">
+            <option value="active">Activo</option>
+            <option value="inactive">Inactivo</option>
+            <option value="maintenance">Mantenimiento</option>
+          </select>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          Guardar glamping
+        </button>
+
       </form>
+
     </div>
   </section>
 
+  <!-- MODAL SERVICIO -->
   <section id="serviceModal" class="modal hidden">
     <div class="modal-card">
-      <button id="closeServiceModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+
+      <button id="closeServiceModal" class="close-panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <h3 id="serviceModalTitle">Editar servicio</h3>
+
       <form id="serviceForm" class="admin-form-grid">
+
         <input type="hidden" id="serviceId" />
-        <div class="field"><label>Nombre ES</label><input type="text" id="serviceNameEs" required /></div>
-        <div class="field"><label>Nombre EN</label><input type="text" id="serviceNameEn" required /></div>
-        <div class="field"><label>Tipo</label><select id="serviceType"><option value="food">Alimentación</option><option value="experience">Experiencia / extra</option><option value="consumption">Consumo interno</option></select></div>
-        <div class="field"><label>Precio</label><input type="number" id="servicePrice" min="0" step="0.01" required /></div>
-        <div class="field full-span"><label>Descripción ES</label><textarea id="serviceDescriptionEs" rows="3"></textarea></div>
-        <div class="field full-span"><label>Descripción EN</label><textarea id="serviceDescriptionEn" rows="3"></textarea></div>
-        <div class="field"><label>Estado</label><select id="serviceActive"><option value="true">Activo</option><option value="false">Inactivo</option></select></div>
-        <button type="submit" class="primary-btn">Guardar servicio</button>
+
+        <div class="field">
+          <label for="serviceNameEs">Nombre ES</label>
+          <input type="text" id="serviceNameEs" required />
+        </div>
+
+        <div class="field">
+          <label for="serviceNameEn">Nombre EN</label>
+          <input type="text" id="serviceNameEn" required />
+        </div>
+
+        <div class="field">
+          <label for="serviceType">Tipo</label>
+          <select id="serviceType">
+            <option value="food">Alimentación</option>
+            <option value="experience">Experiencia / extra</option>
+            <option value="consumption">Consumo interno</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="servicePrice">Precio</label>
+          <input type="number" id="servicePrice" min="0" step="0.01" required />
+        </div>
+
+        <div class="field full-span">
+          <label for="serviceDescriptionEs">Descripción ES</label>
+          <textarea id="serviceDescriptionEs" rows="3"></textarea>
+        </div>
+
+        <div class="field full-span">
+          <label for="serviceDescriptionEn">Descripción EN</label>
+          <textarea id="serviceDescriptionEn" rows="3"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="serviceActive">Estado</label>
+          <select id="serviceActive">
+            <option value="true">Activo</option>
+            <option value="false">Inactivo</option>
+          </select>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          Guardar servicio
+        </button>
+
       </form>
+
     </div>
   </section>
 
+  <!-- MODAL CANCELACIÓN -->
   <section id="cancelModal" class="modal hidden">
     <div class="modal-card">
-      <button id="closeCancelModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+
+      <button id="closeCancelModal" class="close-panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <h3>Gestionar cancelación</h3>
+
       <form id="cancelForm" class="admin-form-grid">
+
         <input type="hidden" id="cancelCode" />
-        <div class="field"><label>Total reserva</label><input type="text" id="cancelTotal" readonly /></div>
-        <div class="field"><label>Valor pagado</label><input type="text" id="cancelPaid" readonly /></div>
-        <div class="field"><label>Valor retenido 50%</label><input type="text" id="cancelRetained" readonly /></div>
-        <div class="field"><label>Valor a devolver</label><input type="text" id="cancelRefund" readonly /></div>
-        <div class="field"><label>Estado devolución</label><select id="refundStatus"><option value="refund_pending">Devolución pendiente</option><option value="refund_done">Devolución realizada</option><option value="cancelled_penalty">Solo penalidad / sin devolución</option></select></div>
-        <div class="field full-span"><label>Motivo cancelación</label><textarea id="cancelReason" rows="3" required></textarea></div>
-        <button type="submit" class="primary-btn">Guardar cancelación</button>
+
+        <div class="field">
+          <label>Total reserva</label>
+          <input type="text" id="cancelTotal" readonly />
+        </div>
+
+        <div class="field">
+          <label>Valor pagado</label>
+          <input type="text" id="cancelPaid" readonly />
+        </div>
+
+        <div class="field">
+          <label>Valor retenido 50%</label>
+          <input type="text" id="cancelRetained" readonly />
+        </div>
+
+        <div class="field">
+          <label>Valor a devolver</label>
+          <input type="text" id="cancelRefund" readonly />
+        </div>
+
+        <div class="field">
+          <label for="refundStatus">Estado devolución</label>
+          <select id="refundStatus">
+            <option value="refund_pending">Devolución pendiente</option>
+            <option value="refund_done">Devolución realizada</option>
+            <option value="cancelled_penalty">Solo penalidad / sin devolución</option>
+          </select>
+        </div>
+
+        <div class="field full-span">
+          <label for="cancelReason">Motivo cancelación</label>
+          <textarea id="cancelReason" rows="3" required></textarea>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          Guardar cancelación
+        </button>
+
       </form>
+
     </div>
   </section>
 
+  <!-- MODAL CONSUMO -->
   <section id="consumptionModal" class="modal hidden">
     <div class="modal-card">
-      <button id="closeConsumptionModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+
+      <button id="closeConsumptionModal" class="close-panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <h3>Agregar consumo / servicio</h3>
+
       <form id="consumptionForm" class="admin-form-grid">
+
         <input type="hidden" id="consumptionCode" />
-        <div class="field"><label>Producto / servicio</label><select id="consumptionService"></select></div>
-        <div class="field"><label>Cantidad</label><input type="number" id="consumptionQty" value="1" min="1" required /></div>
-        <div class="field"><label>Precio unitario</label><input type="number" id="consumptionPrice" min="0" step="0.01" required /></div>
-        <div class="field"><label>Estado pago</label><select id="consumptionPaid"><option value="pending">Pendiente</option><option value="paid">Pagado</option></select></div>
-        <div class="field full-span"><label>Observación</label><textarea id="consumptionNote" rows="3"></textarea></div>
-        <button type="submit" class="primary-btn">Agregar consumo</button>
+
+        <div class="field">
+          <label for="consumptionService">Producto / servicio</label>
+          <select id="consumptionService"></select>
+        </div>
+
+        <div class="field">
+          <label for="consumptionQty">Cantidad</label>
+          <input type="number" id="consumptionQty" value="1" min="1" required />
+        </div>
+
+        <div class="field">
+          <label for="consumptionPrice">Precio unitario</label>
+          <input type="number" id="consumptionPrice" min="0" step="0.01" required />
+        </div>
+
+        <div class="field">
+          <label for="consumptionPaid">Estado pago</label>
+          <select id="consumptionPaid">
+            <option value="pending">Pendiente</option>
+            <option value="paid">Pagado</option>
+          </select>
+        </div>
+
+        <div class="field full-span">
+          <label for="consumptionNote">Observación</label>
+          <textarea id="consumptionNote" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          Agregar consumo
+        </button>
+
       </form>
+
     </div>
   </section>
 
+  <!-- MODAL CHECKOUT -->
   <section id="checkoutModal" class="modal hidden">
     <div class="modal-card">
-      <button id="closeCheckoutModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+
+      <button id="closeCheckoutModal" class="close-panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <h3>Realizar check-out</h3>
+
       <form id="checkoutForm" class="admin-form-grid">
+
         <input type="hidden" id="checkoutCode" />
-        <div class="field"><label>¿Cliente salió?</label><select id="checkoutGuestLeft"><option value="Sí">Sí</option><option value="No">No</option></select></div>
-        <div class="field"><label>¿Hay daños?</label><select id="checkoutDamage"><option value="No">No</option><option value="Sí">Sí</option></select></div>
-        <div class="field hidden" id="damageValueBox"><label>Valor daño</label><input type="number" id="damageValue" value="150" min="0" step="0.01" /></div>
-        <div class="field"><label>Pago final</label><select id="checkoutPaymentMethod"><option value="Efectivo">Efectivo</option><option value="Transferencia">Transferencia</option><option value="Tarjeta">Tarjeta</option><option value="Pendiente">Pendiente</option><option value="Cortesía">Cortesía</option></select></div>
-        <div class="field"><label>Factura</label><select id="invoiceStatus"><option value="sin_factura">Sin factura</option><option value="solicitada">Factura solicitada</option><option value="emitida">Factura emitida</option><option value="enviada">Factura enviada</option></select></div>
-        <div class="field full-span"><label>Observación final</label><textarea id="checkoutNotes" rows="3"></textarea></div>
-        <button type="submit" class="primary-btn">Cerrar check-out y generar ticket</button>
+
+        <div class="field">
+          <label for="checkoutGuestLeft">¿Cliente salió?</label>
+          <select id="checkoutGuestLeft">
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="checkoutDamage">¿Hay daños?</label>
+          <select id="checkoutDamage">
+            <option value="No">No</option>
+            <option value="Sí">Sí</option>
+          </select>
+        </div>
+
+        <div class="field hidden" id="damageValueBox">
+          <label for="damageValue">Valor daño</label>
+          <input type="number" id="damageValue" value="150" min="0" step="0.01" />
+        </div>
+
+        <div class="field">
+          <label for="checkoutPaymentMethod">Pago final</label>
+          <select id="checkoutPaymentMethod">
+            <option value="Efectivo">Efectivo</option>
+            <option value="Transferencia">Transferencia</option>
+            <option value="Tarjeta">Tarjeta</option>
+            <option value="Pendiente">Pendiente</option>
+            <option value="Cortesía">Cortesía</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="invoiceStatus">Factura</label>
+          <select id="invoiceStatus">
+            <option value="sin_factura">Sin factura</option>
+            <option value="solicitada">Factura solicitada</option>
+            <option value="emitida">Factura emitida</option>
+            <option value="enviada">Factura enviada</option>
+          </select>
+        </div>
+
+        <div class="field full-span">
+          <label for="checkoutNotes">Observación final</label>
+          <textarea id="checkoutNotes" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          Cerrar check-out y generar ticket
+        </button>
+
       </form>
+
     </div>
   </section>
 
+  <!-- MODAL HOUSEKEEPING -->
   <section id="housekeepingModal" class="modal hidden">
     <div class="modal-card">
-      <button id="closeHousekeepingModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+
+      <button id="closeHousekeepingModal" class="close-panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <h3>Reporte Housekeeping</h3>
+
       <form id="housekeepingForm" class="admin-form-grid">
+
         <input type="hidden" id="houseCode" />
-        <div class="field"><label>Estado limpieza</label><select id="houseStatus"><option value="clean_pending">Pendiente de limpieza</option><option value="in_cleaning">En limpieza</option><option value="ready">Limpio / listo</option><option value="damage_reported">Daños reportados</option><option value="maintenance">Mantenimiento</option></select></div>
-        <div class="field"><label>¿Daños?</label><select id="houseDamage"><option value="No">No</option><option value="Sí">Sí</option></select></div>
-        <div class="field"><label>Valor sugerido daño</label><input type="number" id="houseDamageValue" value="0" min="0" step="0.01" /></div>
-        <div class="field full-span"><label>Observación Housekeeping</label><textarea id="houseNotes" rows="4"></textarea></div>
-        <button type="submit" class="primary-btn">Guardar reporte</button>
+
+        <div class="field">
+          <label for="houseStatus">Estado limpieza</label>
+          <select id="houseStatus">
+            <option value="clean_pending">Pendiente de limpieza</option>
+            <option value="in_cleaning">En limpieza</option>
+            <option value="ready">Limpio / listo</option>
+            <option value="damage_reported">Daños reportados</option>
+            <option value="maintenance">Mantenimiento</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="houseArea">Área revisada</label>
+          <select id="houseArea">
+            <option value="General">General</option>
+            <option value="Habitación">Habitación</option>
+            <option value="Baño">Baño</option>
+            <option value="Cama / lencería">Cama / lencería</option>
+            <option value="Equipos">Equipos</option>
+            <option value="Exterior / recibidor">Exterior / recibidor</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="houseIssueType">Reporte encontrado</label>
+          <select id="houseIssueType">
+            <option value="Sin novedad">Sin novedad</option>
+            <option value="Falta toalla">Falta toalla</option>
+            <option value="Falta almohada">Falta almohada</option>
+            <option value="Falta cobija">Falta cobija</option>
+            <option value="Falta sábana">Falta sábana</option>
+            <option value="Toalla manchada">Toalla manchada</option>
+            <option value="Sábana manchada">Sábana manchada</option>
+            <option value="Cobija dañada">Cobija dañada</option>
+            <option value="Vidrio dañado">Vidrio dañado</option>
+            <option value="Puerta / cerradura dañada">Puerta / cerradura dañada</option>
+            <option value="Baño con daño">Baño con daño</option>
+            <option value="Equipo eléctrico dañado">Equipo eléctrico dañado</option>
+            <option value="Falta limpieza profunda">Falta limpieza profunda</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="field hidden" id="houseOtherIssueBox">
+          <label for="houseOtherIssue">Especificar novedad</label>
+          <input type="text" id="houseOtherIssue" maxlength="120" />
+        </div>
+
+        <div class="field">
+          <label for="houseDamage">¿Genera cobro?</label>
+          <select id="houseDamage">
+            <option value="No">No</option>
+            <option value="Sí">Sí</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="houseDamageValue">Valor sugerido de cobro</label>
+          <input type="number" id="houseDamageValue" value="0" min="0" step="0.01" />
+        </div>
+
+        <div class="field full-span">
+          <label for="houseNotes">Observación Housekeeping</label>
+          <textarea id="houseNotes" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          Guardar reporte
+        </button>
+
       </form>
+
     </div>
   </section>
 
+  <!-- MODAL EGRESO -->
   <section id="expenseModal" class="modal hidden">
     <div class="modal-card">
-      <button id="closeExpenseModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+
+      <button id="closeExpenseModal" class="close-panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <h3>Agregar egreso</h3>
+
       <form id="expenseForm" class="admin-form-grid">
-        <div class="field"><label>Fecha</label><input type="date" id="expenseDate" required /></div>
-        <div class="field"><label>Categoría</label><select id="expenseCategory"><option>Limpieza</option><option>Lavandería</option><option>Gas</option><option>Luz</option><option>Agua</option><option>Alimentos</option><option>Bebidas</option><option>Transporte</option><option>Mantenimiento</option><option>Personal</option><option>Amenities</option><option>Reparaciones</option><option>Publicidad</option><option>Comisión</option><option>Devolución</option><option>Compra de insumos</option><option>Otros</option></select></div>
-        <div class="field hidden" id="expenseOtherBox"><label>Especificar otro gasto</label><input type="text" id="expenseOther" /></div>
-        <div class="field"><label>Valor</label><input type="number" id="expenseAmount" min="0" step="0.01" required /></div>
-        <div class="field"><label>Responsable</label><input type="text" id="expenseResponsible" /></div>
-        <div class="field full-span"><label>Descripción</label><textarea id="expenseDescription" rows="3" required></textarea></div>
-        <button type="submit" class="primary-btn">Guardar egreso</button>
+
+        <div class="field">
+          <label for="expenseDate">Fecha</label>
+          <input type="date" id="expenseDate" required />
+        </div>
+
+        <div class="field">
+          <label for="expenseCategory">Categoría</label>
+          <select id="expenseCategory">
+            <option>Limpieza</option>
+            <option>Lavandería</option>
+            <option>Gas</option>
+            <option>Luz</option>
+            <option>Agua</option>
+            <option>Alimentos</option>
+            <option>Bebidas</option>
+            <option>Transporte</option>
+            <option>Mantenimiento</option>
+            <option>Personal</option>
+            <option>Amenities</option>
+            <option>Reparaciones</option>
+            <option>Publicidad</option>
+            <option>Comisión</option>
+            <option>Devolución</option>
+            <option>Compra de insumos</option>
+            <option>Otros</option>
+          </select>
+        </div>
+
+        <div class="field hidden" id="expenseOtherBox">
+          <label for="expenseOther">Especificar otro gasto</label>
+          <input type="text" id="expenseOther" />
+        </div>
+
+        <div class="field">
+          <label for="expenseAmount">Valor</label>
+          <input type="number" id="expenseAmount" min="0" step="0.01" required />
+        </div>
+
+        <div class="field">
+          <label for="expenseResponsible">Responsable</label>
+          <input type="text" id="expenseResponsible" />
+        </div>
+
+        <div class="field full-span">
+          <label for="expenseDescription">Descripción</label>
+          <textarea id="expenseDescription" rows="3" required></textarea>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          Guardar egreso
+        </button>
+
       </form>
+
     </div>
   </section>
 
+  <!-- MODAL FECHA ESPECIAL -->
   <section id="specialDateModal" class="modal hidden">
     <div class="modal-card">
-      <button id="closeSpecialDateModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+
+      <button id="closeSpecialDateModal" class="close-panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <h3>Fecha especial</h3>
+
       <form id="specialDateForm" class="admin-form-grid">
+
         <input type="hidden" id="specialDateId" />
-        <div class="field"><label>Nombre</label><input type="text" id="specialName" required /></div>
-        <div class="field"><label>Fecha</label><input type="date" id="specialDate" required /></div>
-        <div class="field"><label>Precio sugerido</label><input type="number" id="specialPrice" min="0" step="0.01" /></div>
-        <div class="field full-span"><label>Promoción / valor agregado</label><textarea id="specialDescription" rows="3"></textarea></div>
-        <div class="field"><label>Estado</label><select id="specialActive"><option value="true">Activo</option><option value="false">Inactivo</option></select></div>
-        <button type="submit" class="primary-btn">Guardar fecha especial</button>
+
+        <div class="field">
+          <label for="specialName">Nombre</label>
+          <input type="text" id="specialName" required />
+        </div>
+
+        <div class="field">
+          <label for="specialDate">Fecha</label>
+          <input type="date" id="specialDate" required />
+        </div>
+
+        <div class="field">
+          <label for="specialPrice">Precio sugerido</label>
+          <input type="number" id="specialPrice" min="0" step="0.01" />
+        </div>
+
+        <div class="field full-span">
+          <label for="specialDescription">Promoción / valor agregado</label>
+          <textarea id="specialDescription" rows="3"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="specialActive">Estado</label>
+          <select id="specialActive">
+            <option value="true">Activo</option>
+            <option value="false">Inactivo</option>
+          </select>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          Guardar fecha especial
+        </button>
+
       </form>
+
     </div>
   </section>
 
