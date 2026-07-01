@@ -3,25 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Glamping Reservas</title>
-
+  <title>Glamping Reserva</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Iconos -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
-  <!-- =========================
-       APP PÚBLICA
-  ========================== -->
   <main id="publicApp">
-
-    <!-- HEADER -->
     <header class="site-header">
       <div class="brand">
         <div class="brand-logo" id="publicLogo">
@@ -37,93 +25,81 @@
         <button class="lang-btn active" data-lang="es">ES</button>
         <button class="lang-btn" data-lang="en">EN</button>
         <button class="admin-open-btn" id="openAdminBtn">
-          <i class="fa-solid fa-user-lock"></i>
-          Admin
+          <i class="fa-solid fa-user-lock"></i> Admin
         </button>
       </div>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <span class="eyebrow" data-i18n="hero_eyebrow">Zuleta · Ibarra · Ecuador</span>
-        <h2 data-i18n="hero_title">Reserva tu experiencia de glamping</h2>
+        <span class="eyebrow" data-i18n="hero_place">Zuleta · Ibarra · Ecuador</span>
+        <h2 data-i18n="hero_title">Reserva tu experiencia en la naturaleza</h2>
         <p data-i18n="hero_text">
-          Cabañas privadas en la naturaleza, con vista, comodidad y atención personalizada.
+          Glampings privados cerca de Laguna Roja y Cubilche, con comodidad, paisaje y atención personalizada.
         </p>
 
         <div class="hero-badges">
-          <span><i class="fa-solid fa-bed"></i> <span data-i18n="badge_private">Privado</span></span>
-          <span><i class="fa-solid fa-mug-hot"></i> <span data-i18n="badge_breakfast">Desayunos</span></span>
-          <span><i class="fa-solid fa-tree"></i> <span data-i18n="badge_nature">Naturaleza</span></span>
+          <span><i class="fa-solid fa-bed"></i> <b data-i18n="badge_private">Hospedaje privado</b></span>
+          <span><i class="fa-solid fa-mug-hot"></i> <b data-i18n="badge_food">Alimentación opcional</b></span>
+          <span><i class="fa-solid fa-tree"></i> <b data-i18n="badge_nature">Experiencias naturales</b></span>
         </div>
       </div>
     </section>
 
-    <!-- BUSCADOR DE DISPONIBILIDAD -->
-    <section class="booking-search card">
+    <section class="card booking-search">
       <div class="section-heading">
         <span data-i18n="step_1">Paso 1</span>
-        <h3 data-i18n="search_title">Consulta disponibilidad</h3>
-        <p data-i18n="search_text">
-          Selecciona tus fechas para ver qué glampings están disponibles.
-        </p>
+        <h3 data-i18n="availability_title">Consulta disponibilidad</h3>
+        <p data-i18n="availability_text">Selecciona fechas, adultos y niños. Las fechas pasadas no están disponibles.</p>
       </div>
 
       <form id="availabilityForm" class="search-grid">
         <div class="field">
-          <label for="checkIn" data-i18n="checkin">Fecha de ingreso</label>
+          <label for="checkIn" data-i18n="checkin_date">Fecha de ingreso</label>
           <input type="date" id="checkIn" required />
         </div>
 
         <div class="field">
-          <label for="checkOut" data-i18n="checkout">Fecha de salida</label>
+          <label for="checkOut" data-i18n="checkout_date">Fecha de salida</label>
           <input type="date" id="checkOut" required />
         </div>
 
         <div class="field">
           <label for="adults" data-i18n="adults">Adultos</label>
           <select id="adults">
-            <option value="1">1</option>
-            <option value="2" selected>2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="1">1 adulto</option>
+            <option value="2" selected>2 adultos</option>
           </select>
         </div>
 
         <div class="field">
           <label for="children" data-i18n="children">Niños</label>
           <select id="children">
-            <option value="0" selected>0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
+            <option value="0" selected>0 niños</option>
+            <option value="1">1 niño</option>
+            <option value="2">2 niños</option>
           </select>
+          <small data-i18n="children_note">Niños permitidos hasta 8 años.</small>
         </div>
 
         <button type="submit" class="primary-btn search-btn">
-          <i class="fa-solid fa-calendar-check"></i>
-          <span data-i18n="search_button">Buscar disponibilidad</span>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span data-i18n="search_availability">Buscar disponibilidad</span>
         </button>
       </form>
     </section>
 
-    <!-- GLAMPINGS -->
     <section class="glampings-section">
       <div class="section-heading">
         <span data-i18n="step_2">Paso 2</span>
-        <h3 data-i18n="choose_glamping">Elige tu glamping</h3>
-        <p data-i18n="choose_glamping_text">
-          Selecciona una unidad disponible para continuar con tu reserva.
-        </p>
+        <h3 data-i18n="choose_unit">Elige tu glamping</h3>
+        <p data-i18n="choose_unit_text">Cada glamping tiene calendario propio. Una reserva pendiente bloquea la fecha por 48 horas.</p>
       </div>
 
-      <div id="glampingsList" class="glampings-grid">
-        <!-- Render dinámico desde script.js -->
-      </div>
+      <div id="glampingsList" class="glampings-grid"></div>
     </section>
 
-    <!-- RESUMEN DE RESERVA -->
     <section id="reservationPanel" class="reservation-panel hidden">
       <div class="panel-card">
         <button id="closeReservationPanel" class="close-panel">
@@ -132,63 +108,80 @@
 
         <div class="section-heading">
           <span data-i18n="step_3">Paso 3</span>
-          <h3 data-i18n="reservation_details">Datos de reserva</h3>
-          <p data-i18n="reservation_details_text">
-            Ingresa la información real de la persona responsable de la reserva.
-          </p>
+          <h3 data-i18n="booking_data">Datos de reserva</h3>
+          <p data-i18n="booking_data_text">La reserva queda pendiente hasta confirmar el abono por WhatsApp.</p>
         </div>
 
-        <!-- RESUMEN -->
         <div class="selected-summary">
           <img id="summaryImage" src="" alt="Glamping seleccionado" />
           <div>
-            <h4 id="summaryGlampingName">Nombre glamping</h4>
+            <h4 id="summaryGlampingName">Glamping</h4>
             <p id="summaryDates">Fechas</p>
             <p id="summaryGuests">Huéspedes</p>
-            <strong id="summaryPrice">$0.00</strong>
+            <strong id="summaryPrice">$0.00 / noche</strong>
           </div>
         </div>
 
-        <!-- EXTRAS -->
-        <div class="subsection">
-          <h4 data-i18n="breakfast_title">Desayuno y extras</h4>
-
-          <div class="field">
-            <label for="breakfastSelect" data-i18n="breakfast_option">Tipo de desayuno</label>
-            <select id="breakfastSelect">
-              <!-- Render dinámico -->
-            </select>
+        <div class="hotel-rules">
+          <div>
+            <i class="fa-solid fa-door-open"></i>
+            <strong>Check-in</strong>
+            <span id="publicCheckinText">Desde 15h00</span>
           </div>
-
-          <div id="extrasList" class="extras-list">
-            <!-- Render dinámico -->
+          <div>
+            <i class="fa-solid fa-door-closed"></i>
+            <strong>Check-out</strong>
+            <span id="publicCheckoutText">Hasta 11h00</span>
+          </div>
+          <div>
+            <i class="fa-solid fa-child"></i>
+            <strong>Niños</strong>
+            <span>Hasta 8 años</span>
           </div>
         </div>
 
-        <!-- FORMULARIO CLIENTE -->
         <form id="reservationForm" class="reservation-form">
+          <div class="subsection">
+            <h4>Alimentación</h4>
+            <div id="foodServicesList" class="service-options"></div>
+          </div>
 
           <div class="subsection">
-            <h4 data-i18n="holder_data">Datos del titular</h4>
+            <h4>Experiencias y extras</h4>
+            <div id="experienceServicesList" class="service-options"></div>
+          </div>
+
+          <div class="subsection">
+            <h4>Datos del titular</h4>
 
             <div class="form-grid">
               <div class="field">
-                <label for="fullName" data-i18n="full_name">Nombre completo</label>
+                <label>Nombre completo</label>
                 <input type="text" id="fullName" required />
               </div>
 
               <div class="field">
-                <label for="documentId" data-i18n="document">Cédula / Pasaporte</label>
+                <label>Cédula / Pasaporte</label>
                 <input type="text" id="documentId" required />
               </div>
 
               <div class="field">
-                <label for="country" data-i18n="country">País</label>
-                <input type="text" id="country" value="Ecuador" required />
+                <label>País</label>
+                <select id="country" required>
+                  <option value="Ecuador">Ecuador</option>
+                  <option value="Colombia">Colombia</option>
+                  <option value="Perú">Perú</option>
+                  <option value="Chile">Chile</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="México">México</option>
+                  <option value="Estados Unidos">Estados Unidos</option>
+                  <option value="España">España</option>
+                  <option value="Otro">Otro</option>
+                </select>
               </div>
 
               <div class="field phone-field">
-                <label data-i18n="whatsapp">WhatsApp</label>
+                <label>WhatsApp</label>
                 <div class="phone-row">
                   <select id="countryCode" required>
                     <option value="+593" selected>🇪🇨 +593</option>
@@ -200,78 +193,95 @@
                     <option value="+1">🇺🇸 +1</option>
                     <option value="+34">🇪🇸 +34</option>
                   </select>
-                  <input
-                    type="tel"
-                    id="phoneNumber"
-                    placeholder="0980000000"
-                    required
-                  />
+                  <input type="tel" id="phoneNumber" placeholder="0980000000" required />
                 </div>
-                <small data-i18n="phone_help">Puedes escribir el número con cero inicial.</small>
+                <small>El número se guarda completo, incluso si empieza con 0.</small>
               </div>
 
               <div class="field">
-                <label for="email" data-i18n="email">Correo electrónico</label>
+                <label>Correo electrónico</label>
                 <input type="email" id="email" required />
               </div>
 
               <div class="field">
-                <label for="city" data-i18n="city">Ciudad</label>
+                <label>Ciudad</label>
                 <input type="text" id="city" required />
               </div>
 
               <div class="field">
-                <label for="arrivalTime" data-i18n="arrival_time">Hora estimada de llegada</label>
+                <label>Medio de llegada</label>
+                <select id="transportType" required>
+                  <option value="propio">Vehículo propio</option>
+                  <option value="transporte_glamping">Transporte del glamping</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="field hidden" id="arrivalTimeField">
+                <label>Hora estimada de llegada</label>
                 <input type="time" id="arrivalTime" />
+              </div>
+            </div>
+
+            <p class="helper-note" id="transportHelp">
+              Si usas transporte del glamping, el punto estratégico de salida desde Ibarra y la hora se coordinarán por WhatsApp.
+            </p>
+          </div>
+
+          <div class="subsection">
+            <h4>Acompañantes obligatorios</h4>
+            <p class="helper-note" id="companionsHelp">
+              El sistema genera automáticamente los campos según adultos y niños seleccionados.
+            </p>
+            <div id="companionsList" class="companions-list"></div>
+          </div>
+
+          <div class="subsection">
+            <h4>Alergias y observaciones generales</h4>
+
+            <div class="form-grid">
+              <div class="field">
+                <label>Alergias alimentarias</label>
+                <textarea id="foodAllergies" rows="3" placeholder="Ejemplo: lactosa, maní, gluten..."></textarea>
               </div>
 
               <div class="field">
-                <label for="transportType" data-i18n="arrival_method">Medio de llegada</label>
-                <select id="transportType">
-                  <option value="propio" data-i18n="own_transport">Vehículo propio</option>
-                  <option value="buseta" data-i18n="project_transport">Transporte del glamping</option>
-                  <option value="otro" data-i18n="other">Otro</option>
-                </select>
+                <label>Condiciones médicas importantes</label>
+                <textarea id="medicalNotes" rows="3" placeholder="Información importante para atención del huésped."></textarea>
+              </div>
+
+              <div class="field full-span">
+                <label>Observaciones adicionales</label>
+                <textarea id="notes" rows="3" placeholder="Cumpleaños, aniversario, llegada especial, solicitudes..."></textarea>
               </div>
             </div>
           </div>
 
-          <!-- ACOMPAÑANTES -->
-          <div class="subsection">
-            <div class="subsection-row">
-              <h4 data-i18n="companions">Acompañantes</h4>
-              <button type="button" id="addCompanionBtn" class="secondary-btn">
-                <i class="fa-solid fa-plus"></i>
-                <span data-i18n="add_companion">Agregar</span>
-              </button>
-            </div>
-
-            <div id="companionsList" class="companions-list">
-              <!-- Dinámico -->
-            </div>
-          </div>
-
-          <!-- OBSERVACIONES -->
-          <div class="subsection">
-            <h4 data-i18n="health_notes">Alergias y observaciones</h4>
-
-            <div class="field">
-              <label for="allergies" data-i18n="allergies">Alergias alimentarias o médicas</label>
-              <textarea id="allergies" rows="3"></textarea>
-            </div>
-
-            <div class="field">
-              <label for="notes" data-i18n="notes">Observaciones adicionales</label>
-              <textarea id="notes" rows="3"></textarea>
-            </div>
-          </div>
-
-          <!-- TOTALES -->
           <div class="payment-summary">
-            <h4 data-i18n="payment_summary">Resumen de pago</h4>
+            <h4>Resumen de pago</h4>
 
             <div class="summary-row">
-              <span data-i18n="total_reservation">Total reserva</span>
+              <span>Precio por noche</span>
+              <strong id="nightPrice">$0.00</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Noches</span>
+              <strong id="nightsCount">0</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Hospedaje</span>
+              <strong id="lodgingTotal">$0.00</strong>
+            </div>
+
+            <div class="summary-row">
+              <span>Servicios</span>
+              <strong id="servicesTotal">$0.00</strong>
+            </div>
+
+            <div class="summary-row total-row">
+              <span>Total reserva</span>
               <strong id="totalReservation">$0.00</strong>
             </div>
 
@@ -281,102 +291,72 @@
             </div>
 
             <div class="summary-row">
-              <span data-i18n="pending_balance">Saldo pendiente al check-in</span>
+              <span>Saldo al check-in</span>
               <strong id="pendingBalance">$0.00</strong>
             </div>
 
-            <p class="payment-note" data-i18n="payment_note">
-              La reserva queda pendiente hasta confirmar el pago por WhatsApp.
+            <p class="payment-note">
+              La fecha queda separada como pendiente por 48 horas. Si no se confirma el pago, se libera automáticamente.
             </p>
           </div>
 
-          <!-- POLÍTICAS -->
           <div class="policies-box">
-            <h4 data-i18n="policies_title">Políticas de reserva</h4>
+            <h4>Políticas obligatorias</h4>
 
             <div class="policy-text">
-              <p>
-                <strong data-i18n="deposit_policy_title">Abono:</strong>
-                <span data-i18n="deposit_policy">
-                  Para confirmar la reserva se requiere el abono configurado por administración.
-                </span>
-              </p>
-
-              <p>
-                <strong data-i18n="cancel_policy_title">Cancelación:</strong>
-                <span data-i18n="cancel_policy">
-                  Si el huésped cancela después de abonar, se aplicará una penalidad equivalente al 50% del valor abonado.
-                </span>
-              </p>
-
-              <p>
-                <strong data-i18n="damage_policy_title">Daños:</strong>
-                <span data-i18n="damage_policy">
-                  Daños menores tendrán una multa base de $150. Daños superiores serán cobrados según evaluación administrativa.
-                </span>
-              </p>
-
-              <p>
-                <strong data-i18n="data_policy_title">Datos:</strong>
-                <span data-i18n="data_policy">
-                  La información ingresada será usada para fines administrativos, seguridad y atención de la reserva.
-                </span>
-              </p>
+              <p><strong>Reserva:</strong> Para confirmar la reserva se requiere el abono configurado por administración.</p>
+              <p><strong>Cancelación:</strong> Si el huésped cancela después de abonar, se aplicará una penalidad equivalente al 50% del valor abonado.</p>
+              <p><strong>Daños:</strong> Daños menores tendrán una multa base de $150. Daños superiores serán cobrados según evaluación administrativa.</p>
+              <p><strong>Datos:</strong> La información ingresada será usada para fines administrativos, seguridad, control de reserva y atención del hospedaje.</p>
+              <p><strong>Check-in / Check-out:</strong> El ingreso y salida se realizan según horario configurado por administración.</p>
             </div>
 
             <label class="checkbox-line">
               <input type="checkbox" id="acceptPolicies" required />
-              <span data-i18n="accept_policies">
-                Acepto las políticas de reserva, cancelación, daños y uso administrativo de datos.
-              </span>
+              <span>Acepto las políticas de reserva, cancelación, daños y uso administrativo de datos.</span>
             </label>
           </div>
 
           <button type="submit" class="primary-btn full-btn">
             <i class="fa-brands fa-whatsapp"></i>
-            <span data-i18n="send_reservation">Generar reserva y continuar por WhatsApp</span>
+            Generar reserva y continuar por WhatsApp
           </button>
         </form>
       </div>
     </section>
 
-    <!-- POLÍTICAS GENERALES -->
     <section class="info-section">
       <div class="section-heading">
-        <h3 data-i18n="general_policies">Información importante</h3>
+        <h3>Información importante</h3>
       </div>
 
       <div class="info-grid">
         <article class="info-card">
-          <i class="fa-solid fa-clock"></i>
-          <h4 data-i18n="checkin_checkout">Check-in / Check-out</h4>
-          <p id="checkInOutText">Ingreso desde 15h00 · Salida hasta 11h00</p>
+          <i class="fa-solid fa-calendar-check"></i>
+          <h4>Reserva pendiente</h4>
+          <p>La fecha se bloquea temporalmente hasta confirmar el abono.</p>
         </article>
 
         <article class="info-card">
           <i class="fa-solid fa-money-check-dollar"></i>
-          <h4 data-i18n="payment">Pago</h4>
-          <p data-i18n="payment_info">La reserva se confirma solo con abono validado por administración.</p>
+          <h4>Pago</h4>
+          <p>El saldo pendiente se cancela al check-in o según coordinación administrativa.</p>
         </article>
 
         <article class="info-card">
           <i class="fa-solid fa-shield-heart"></i>
-          <h4 data-i18n="security">Seguridad</h4>
-          <p data-i18n="security_info">Los datos de huéspedes y acompañantes son obligatorios para control interno.</p>
+          <h4>Seguridad</h4>
+          <p>Los datos del titular y acompañantes son obligatorios para control interno.</p>
         </article>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="site-footer">
       <p id="footerBusinessName">Glamping Boutique</p>
-      <small data-i18n="footer_text">Sistema de reservas administrable para hospedajes boutique.</small>
+      <small>Sistema administrable para hospedajes tipo glamping.</small>
     </footer>
   </main>
 
-  <!-- =========================
-       LOGIN ADMIN
-  ========================== -->
   <section id="adminLogin" class="admin-login hidden">
     <div class="login-card">
       <button id="closeAdminLogin" class="close-panel">
@@ -388,33 +368,26 @@
       </div>
 
       <h2>Administrador</h2>
-      <p>Acceso interno para gestionar reservas y configuración.</p>
+      <p>Acceso interno para gestionar reservas, calendario, servicios y finanzas.</p>
 
       <form id="adminLoginForm">
         <div class="field">
-          <label for="adminUser">Usuario</label>
+          <label>Usuario</label>
           <input type="text" id="adminUser" required />
         </div>
 
         <div class="field">
-          <label for="adminPass">Contraseña</label>
+          <label>Contraseña</label>
           <input type="password" id="adminPass" required />
         </div>
 
-        <button type="submit" class="primary-btn full-btn">
-          Ingresar
-        </button>
+        <button type="submit" class="primary-btn full-btn">Ingresar</button>
       </form>
 
-      <small class="demo-note">
-        Demo inicial: admin / admin123
-      </small>
+      <small class="demo-note">Demo inicial: admin / admin123</small>
     </div>
   </section>
 
-  <!-- =========================
-       PANEL ADMIN
-  ========================== -->
   <section id="adminPanel" class="admin-panel hidden">
     <aside class="admin-sidebar">
       <div class="admin-brand">
@@ -426,162 +399,151 @@
       </div>
 
       <nav class="admin-menu">
-        <button class="admin-nav active" data-section="dashboard">
-          <i class="fa-solid fa-chart-line"></i> Dashboard
-        </button>
-        <button class="admin-nav" data-section="settings">
-          <i class="fa-solid fa-gear"></i> Configuración
-        </button>
-        <button class="admin-nav" data-section="units">
-          <i class="fa-solid fa-house-chimney-window"></i> Glampings
-        </button>
-        <button class="admin-nav" data-section="bookings">
-          <i class="fa-solid fa-calendar-days"></i> Reservas
-        </button>
-        <button class="admin-nav" data-section="services">
-          <i class="fa-solid fa-mug-hot"></i> Desayunos / Extras
-        </button>
+        <button class="admin-nav active" data-section="dashboard"><i class="fa-solid fa-chart-line"></i> Dashboard</button>
+        <button class="admin-nav" data-section="calendar"><i class="fa-solid fa-calendar-days"></i> Calendario</button>
+        <button class="admin-nav" data-section="manual"><i class="fa-solid fa-plus"></i> Nueva reserva</button>
+        <button class="admin-nav" data-section="bookings"><i class="fa-solid fa-list-check"></i> Reservas</button>
+        <button class="admin-nav" data-section="units"><i class="fa-solid fa-house-chimney-window"></i> Glampings</button>
+        <button class="admin-nav" data-section="services"><i class="fa-solid fa-utensils"></i> Servicios</button>
+        <button class="admin-nav" data-section="finance"><i class="fa-solid fa-coins"></i> Finanzas</button>
+        <button class="admin-nav" data-section="alerts"><i class="fa-solid fa-bell"></i> Fechas especiales</button>
+        <button class="admin-nav" data-section="settings"><i class="fa-solid fa-gear"></i> Configuración</button>
       </nav>
 
       <button id="logoutAdminBtn" class="logout-btn">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        Salir
+        <i class="fa-solid fa-right-from-bracket"></i> Salir
       </button>
     </aside>
 
     <div class="admin-content">
-
       <header class="admin-topbar">
         <div>
           <h2 id="adminSectionTitle">Dashboard</h2>
-          <p>Control interno de reservas, pagos y disponibilidad.</p>
+          <p>Control interno de operación, reservas y rentabilidad.</p>
         </div>
 
         <button id="backToPublicBtn" class="secondary-btn">
-          <i class="fa-solid fa-eye"></i>
-          Ver sitio
+          <i class="fa-solid fa-eye"></i> Ver sitio
         </button>
       </header>
 
-      <!-- DASHBOARD -->
       <section id="admin-dashboard" class="admin-section active">
         <div class="stats-grid">
-          <article class="stat-card">
-            <span>Pendientes</span>
-            <strong id="statPending">0</strong>
-          </article>
-          <article class="stat-card">
-            <span>Confirmadas</span>
-            <strong id="statConfirmed">0</strong>
-          </article>
-          <article class="stat-card">
-            <span>Ingresos estimados</span>
-            <strong id="statRevenue">$0</strong>
-          </article>
-          <article class="stat-card">
-            <span>Glampings activos</span>
-            <strong id="statUnits">0</strong>
-          </article>
+          <article class="stat-card"><span>Pendientes</span><strong id="statPending">0</strong></article>
+          <article class="stat-card"><span>Confirmadas</span><strong id="statConfirmed">0</strong></article>
+          <article class="stat-card"><span>Noches vendidas</span><strong id="statNights">0</strong></article>
+          <article class="stat-card"><span>Ganancia neta</span><strong id="statNet">$0</strong></article>
         </div>
 
         <div class="admin-card">
           <h3>Reservas recientes</h3>
-          <div id="recentBookings" class="admin-list">
-            <!-- Dinámico -->
-          </div>
+          <div id="recentBookings" class="admin-list"></div>
         </div>
       </section>
 
-      <!-- SETTINGS -->
-      <section id="admin-settings" class="admin-section">
+      <section id="admin-calendar" class="admin-section">
         <div class="admin-card">
-          <h3>Configuración del negocio</h3>
+          <div class="admin-card-head">
+            <h3>Calendario operativo</h3>
+            <div class="calendar-controls">
+              <button id="prevMonthBtn" class="secondary-btn small-btn"><i class="fa-solid fa-chevron-left"></i></button>
+              <strong id="calendarMonthTitle">Mes</strong>
+              <button id="nextMonthBtn" class="secondary-btn small-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
 
-          <form id="settingsForm" class="admin-form-grid">
+          <div class="calendar-legend">
+            <span><b class="dot available"></b> Disponible</span>
+            <span><b class="dot pending"></b> Pendiente</span>
+            <span><b class="dot confirmed"></b> Ocupado</span>
+            <span><b class="dot expired"></b> Expirado / cancelado</span>
+          </div>
+
+          <div id="calendarGrid" class="calendar-grid"></div>
+        </div>
+      </section>
+
+      <section id="admin-manual" class="admin-section">
+        <div class="admin-card">
+          <h3>Nueva reserva manual</h3>
+          <p class="helper-note">Útil cuando el cliente reserva directamente por WhatsApp o llamada.</p>
+
+          <form id="manualBookingForm" class="admin-form-grid">
             <div class="field">
-              <label>Nombre del negocio</label>
-              <input type="text" id="settingBusinessName" />
+              <label>Glamping</label>
+              <select id="manualUnit" required></select>
             </div>
 
             <div class="field">
-              <label>Subtítulo</label>
-              <input type="text" id="settingSubtitle" />
+              <label>Ingreso</label>
+              <input type="date" id="manualCheckIn" required />
             </div>
 
             <div class="field">
-              <label>Logo URL</label>
-              <input type="url" id="settingLogoUrl" />
+              <label>Salida</label>
+              <input type="date" id="manualCheckOut" required />
             </div>
 
             <div class="field">
-              <label>Foto principal URL</label>
-              <input type="url" id="settingHeroImage" />
+              <label>Adultos</label>
+              <select id="manualAdults">
+                <option value="1">1 adulto</option>
+                <option value="2" selected>2 adultos</option>
+              </select>
             </div>
 
             <div class="field">
-              <label>WhatsApp código país</label>
-              <input type="text" id="settingWhatsappCode" placeholder="+593" />
+              <label>Niños</label>
+              <select id="manualChildren">
+                <option value="0" selected>0 niños</option>
+                <option value="1">1 niño</option>
+                <option value="2">2 niños</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Nombre titular</label>
+              <input type="text" id="manualName" required />
+            </div>
+
+            <div class="field">
+              <label>Documento</label>
+              <input type="text" id="manualDocument" required />
+            </div>
+
+            <div class="field">
+              <label>WhatsApp código</label>
+              <input type="text" id="manualWhatsappCode" value="+593" required />
             </div>
 
             <div class="field">
               <label>WhatsApp número</label>
-              <input type="text" id="settingWhatsappNumber" placeholder="0980000000" />
+              <input type="text" id="manualPhone" placeholder="0980000000" required />
             </div>
 
             <div class="field">
-              <label>Check-in</label>
-              <input type="time" id="settingCheckin" />
-            </div>
-
-            <div class="field">
-              <label>Check-out</label>
-              <input type="time" id="settingCheckout" />
-            </div>
-
-            <div class="field">
-              <label>Porcentaje de abono</label>
-              <select id="settingDeposit">
-                <option value="40">40%</option>
-                <option value="50">50%</option>
-                <option value="60">60%</option>
-                <option value="100">100%</option>
+              <label>Estado</label>
+              <select id="manualStatus">
+                <option value="pending">Pendiente de pago</option>
+                <option value="confirmed">Confirmada</option>
               </select>
             </div>
 
             <div class="field">
-              <label>Tiempo máximo pago pendiente</label>
-              <select id="settingDeadlineHours">
-                <option value="24">24 horas</option>
-                <option value="48" selected>48 horas</option>
-                <option value="72">72 horas</option>
-              </select>
+              <label>Abono recibido</label>
+              <input type="number" id="manualPaid" value="0" min="0" step="0.01" />
             </div>
 
-            <button type="submit" class="primary-btn">
-              Guardar configuración
-            </button>
+            <div class="field full-span">
+              <label>Notas administrativas</label>
+              <textarea id="manualNotes" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="primary-btn">Crear reserva manual</button>
           </form>
         </div>
       </section>
 
-      <!-- UNITS -->
-      <section id="admin-units" class="admin-section">
-        <div class="admin-card">
-          <div class="admin-card-head">
-            <h3>Glampings</h3>
-            <button id="addUnitBtn" class="primary-btn small-btn">
-              <i class="fa-solid fa-plus"></i>
-              Agregar
-            </button>
-          </div>
-
-          <div id="adminUnitsList" class="admin-list">
-            <!-- Dinámico -->
-          </div>
-        </div>
-      </section>
-
-      <!-- BOOKINGS -->
       <section id="admin-bookings" class="admin-section">
         <div class="admin-card">
           <h3>Reservas</h3>
@@ -592,105 +554,178 @@
               <option value="all">Todas</option>
               <option value="pending">Pendientes</option>
               <option value="confirmed">Confirmadas</option>
+              <option value="checked_in">Check-in</option>
+              <option value="completed">Completadas</option>
               <option value="cancelled">Canceladas</option>
               <option value="expired">Expiradas</option>
             </select>
           </div>
 
-          <div id="adminBookingsList" class="admin-list">
-            <!-- Dinámico -->
-          </div>
+          <div id="adminBookingsList" class="admin-list"></div>
         </div>
       </section>
 
-      <!-- SERVICES -->
+      <section id="admin-units" class="admin-section">
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>Glampings</h3>
+            <button id="addUnitBtn" class="primary-btn small-btn"><i class="fa-solid fa-plus"></i> Agregar</button>
+          </div>
+
+          <div id="adminUnitsList" class="admin-list"></div>
+        </div>
+      </section>
+
       <section id="admin-services" class="admin-section">
         <div class="admin-card">
-          <h3>Desayunos</h3>
-          <div id="adminBreakfastsList" class="admin-list">
-            <!-- Dinámico -->
+          <div class="admin-card-head">
+            <h3>Servicios y alimentación</h3>
+            <button id="addServiceBtn" class="primary-btn small-btn"><i class="fa-solid fa-plus"></i> Agregar servicio</button>
           </div>
-        </div>
 
-        <div class="admin-card">
-          <h3>Extras</h3>
-          <div id="adminExtrasList" class="admin-list">
-            <!-- Dinámico -->
-          </div>
+          <div id="adminServicesList" class="admin-list"></div>
         </div>
       </section>
 
+      <section id="admin-finance" class="admin-section">
+        <div class="stats-grid">
+          <article class="stat-card"><span>Ingresos</span><strong id="financeIncome">$0</strong></article>
+          <article class="stat-card"><span>Egresos</span><strong id="financeExpenses">$0</strong></article>
+          <article class="stat-card"><span>Ganancia</span><strong id="financeNet">$0</strong></article>
+          <article class="stat-card"><span>Ocupación</span><strong id="financeOccupancy">0%</strong></article>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>Egresos</h3>
+            <button id="addExpenseBtn" class="primary-btn small-btn"><i class="fa-solid fa-plus"></i> Agregar egreso</button>
+          </div>
+
+          <div id="expensesList" class="admin-list"></div>
+        </div>
+      </section>
+
+      <section id="admin-alerts" class="admin-section">
+        <div class="admin-card">
+          <div class="admin-card-head">
+            <h3>Fechas especiales y alertas</h3>
+            <button id="addSpecialDateBtn" class="primary-btn small-btn"><i class="fa-solid fa-plus"></i> Agregar fecha</button>
+          </div>
+
+          <div id="specialDatesList" class="admin-list"></div>
+        </div>
+      </section>
+
+      <section id="admin-settings" class="admin-section">
+        <div class="admin-card">
+          <h3>Configuración del negocio</h3>
+
+          <form id="settingsForm" class="admin-form-grid">
+            <div class="field"><label>Nombre del negocio</label><input type="text" id="settingBusinessName" /></div>
+            <div class="field"><label>Subtítulo</label><input type="text" id="settingSubtitle" /></div>
+            <div class="field full-span"><label>Logo URL</label><input type="url" id="settingLogoUrl" /></div>
+            <div class="field full-span"><label>Foto principal URL</label><input type="url" id="settingHeroImage" /></div>
+            <div class="field"><label>WhatsApp código país</label><input type="text" id="settingWhatsappCode" placeholder="+593" /></div>
+            <div class="field"><label>WhatsApp número</label><input type="text" id="settingWhatsappNumber" placeholder="0980000000" /></div>
+            <div class="field"><label>Check-in</label><input type="time" id="settingCheckin" /></div>
+            <div class="field"><label>Check-out</label><input type="time" id="settingCheckout" /></div>
+            <div class="field">
+              <label>Porcentaje de abono</label>
+              <select id="settingDeposit">
+                <option value="40">40%</option>
+                <option value="50">50%</option>
+                <option value="60">60%</option>
+                <option value="100">100%</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Tiempo máximo pago pendiente</label>
+              <select id="settingDeadlineHours">
+                <option value="24">24 horas</option>
+                <option value="48">48 horas</option>
+                <option value="72">72 horas</option>
+              </select>
+            </div>
+
+            <button type="submit" class="primary-btn">Guardar configuración</button>
+          </form>
+        </div>
+      </section>
     </div>
   </section>
 
-  <!-- MODAL EDICIÓN GLAMPING -->
   <section id="unitModal" class="modal hidden">
     <div class="modal-card">
-      <button id="closeUnitModal" class="close-panel">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
+      <button id="closeUnitModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
       <h3 id="unitModalTitle">Editar glamping</h3>
 
       <form id="unitForm" class="admin-form-grid">
         <input type="hidden" id="unitId" />
-
-        <div class="field">
-          <label>Nombre</label>
-          <input type="text" id="unitName" required />
-        </div>
-
-        <div class="field">
-          <label>Precio por noche</label>
-          <input type="number" id="unitPrice" required />
-        </div>
-
-        <div class="field">
-          <label>Adultos máximo</label>
-          <input type="number" id="unitAdults" required />
-        </div>
-
-        <div class="field">
-          <label>Niños máximo</label>
-          <input type="number" id="unitChildren" required />
-        </div>
-
-        <div class="field full-span">
-          <label>Descripción ES</label>
-          <textarea id="unitDescriptionEs" rows="3"></textarea>
-        </div>
-
-        <div class="field full-span">
-          <label>Descripción EN</label>
-          <textarea id="unitDescriptionEn" rows="3"></textarea>
-        </div>
-
-        <div class="field full-span">
-          <label>Foto principal URL</label>
-          <input type="url" id="unitImage" />
-        </div>
-
-        <div class="field full-span">
-          <label>Servicios incluidos, separados por coma</label>
-          <input type="text" id="unitFeatures" placeholder="Baño privado, ducha, calefón..." />
-        </div>
-
-        <div class="field">
-          <label>Estado</label>
-          <select id="unitStatus">
-            <option value="active">Activo</option>
-            <option value="inactive">Inactivo</option>
-          </select>
-        </div>
-
-        <button type="submit" class="primary-btn">
-          Guardar glamping
-        </button>
+        <div class="field"><label>Nombre</label><input type="text" id="unitName" required /></div>
+        <div class="field"><label>Precio por noche</label><input type="number" id="unitPrice" required /></div>
+        <div class="field"><label>Adultos máximo</label><input type="number" id="unitAdults" min="1" max="2" required /></div>
+        <div class="field"><label>Niños máximo</label><input type="number" id="unitChildren" min="0" max="2" required /></div>
+        <div class="field full-span"><label>Descripción ES</label><textarea id="unitDescriptionEs" rows="3"></textarea></div>
+        <div class="field full-span"><label>Descripción EN</label><textarea id="unitDescriptionEn" rows="3"></textarea></div>
+        <div class="field full-span"><label>Foto principal URL</label><input type="url" id="unitImage" /></div>
+        <div class="field full-span"><label>Servicios incluidos, separados por coma</label><input type="text" id="unitFeatures" /></div>
+        <div class="field"><label>Estado</label><select id="unitStatus"><option value="active">Activo</option><option value="inactive">Inactivo</option></select></div>
+        <button type="submit" class="primary-btn">Guardar glamping</button>
       </form>
     </div>
   </section>
 
-  <!-- TOAST -->
+  <section id="serviceModal" class="modal hidden">
+    <div class="modal-card">
+      <button id="closeServiceModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+      <h3 id="serviceModalTitle">Editar servicio</h3>
+
+      <form id="serviceForm" class="admin-form-grid">
+        <input type="hidden" id="serviceId" />
+        <div class="field"><label>Nombre ES</label><input type="text" id="serviceNameEs" required /></div>
+        <div class="field"><label>Nombre EN</label><input type="text" id="serviceNameEn" required /></div>
+        <div class="field"><label>Tipo</label><select id="serviceType"><option value="food">Alimentación</option><option value="experience">Experiencia / extra</option></select></div>
+        <div class="field"><label>Precio</label><input type="number" id="servicePrice" min="0" step="0.01" required /></div>
+        <div class="field full-span"><label>Descripción ES</label><textarea id="serviceDescriptionEs" rows="3"></textarea></div>
+        <div class="field full-span"><label>Descripción EN</label><textarea id="serviceDescriptionEn" rows="3"></textarea></div>
+        <div class="field"><label>Estado</label><select id="serviceActive"><option value="true">Activo</option><option value="false">Inactivo</option></select></div>
+        <button type="submit" class="primary-btn">Guardar servicio</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="expenseModal" class="modal hidden">
+    <div class="modal-card">
+      <button id="closeExpenseModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+      <h3>Agregar egreso</h3>
+
+      <form id="expenseForm" class="admin-form-grid">
+        <div class="field"><label>Fecha</label><input type="date" id="expenseDate" required /></div>
+        <div class="field"><label>Categoría</label><input type="text" id="expenseCategory" placeholder="Limpieza, lavandería, gas..." required /></div>
+        <div class="field"><label>Valor</label><input type="number" id="expenseAmount" min="0" step="0.01" required /></div>
+        <div class="field full-span"><label>Descripción</label><textarea id="expenseDescription" rows="3"></textarea></div>
+        <button type="submit" class="primary-btn">Guardar egreso</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="specialDateModal" class="modal hidden">
+    <div class="modal-card">
+      <button id="closeSpecialDateModal" class="close-panel"><i class="fa-solid fa-xmark"></i></button>
+      <h3>Fecha especial</h3>
+
+      <form id="specialDateForm" class="admin-form-grid">
+        <input type="hidden" id="specialDateId" />
+        <div class="field"><label>Nombre</label><input type="text" id="specialName" required /></div>
+        <div class="field"><label>Fecha</label><input type="date" id="specialDate" required /></div>
+        <div class="field"><label>Precio sugerido</label><input type="number" id="specialPrice" min="0" step="0.01" /></div>
+        <div class="field full-span"><label>Promoción / valor agregado</label><textarea id="specialDescription" rows="3"></textarea></div>
+        <div class="field"><label>Estado</label><select id="specialActive"><option value="true">Activo</option><option value="false">Inactivo</option></select></div>
+        <button type="submit" class="primary-btn">Guardar fecha especial</button>
+      </form>
+    </div>
+  </section>
+
   <div id="toast" class="toast hidden"></div>
 
   <script src="script.js"></script>
