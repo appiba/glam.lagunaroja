@@ -1492,3 +1492,41 @@ img {
     font-size: 11px;
   }
 }
+/* =========================
+   CORRECCIÓN ALINEACIÓN FORMULARIO DISPONIBILIDAD
+========================= */
+
+.availability-form {
+  align-items: end;
+}
+
+.availability-form .field {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.availability-form .field label {
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.availability-form .field input,
+.availability-form .field select {
+  height: 58px;
+}
+
+.availability-form .field small {
+  min-height: 18px;
+  margin-top: 8px;
+  display: block;
+}
+
+/* Para que el botón quede alineado con los inputs */
+.availability-form .search-btn {
+  height: 58px;
+  align-self: end;
+  margin-top: 28px;
+}
