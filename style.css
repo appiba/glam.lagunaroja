@@ -1492,41 +1492,86 @@ img {
     font-size: 11px;
   }
 }
+
 /* =========================
-   CORRECCIÓN ALINEACIÓN FORMULARIO DISPONIBILIDAD
+   FORMULARIO DISPONIBILIDAD - ALINEACIÓN CORREGIDA
 ========================= */
 
-.availability-form {
-  align-items: end;
+/* Este bloque corrige directamente el formulario real */
+#availabilityForm.search-grid {
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start !important;
 }
 
-.availability-form .field {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+/* Cada columna del formulario queda con la misma altura interna */
+#availabilityForm .field {
+  display: grid !important;
+  grid-template-rows: 22px 58px 18px;
+  gap: 7px;
+  align-items: start;
 }
 
-.availability-form .field label {
-  min-height: 20px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.availability-form .field input,
-.availability-form .field select {
-  height: 58px;
-}
-
-.availability-form .field small {
-  min-height: 18px;
-  margin-top: 8px;
+/* Todos los títulos quedan arriba y alineados */
+#availabilityForm .field label {
+  height: 22px;
+  min-height: 22px;
+  line-height: 22px;
+  margin: 0 !important;
   display: block;
 }
 
-/* Para que el botón quede alineado con los inputs */
-.availability-form .search-btn {
-  height: 58px;
-  align-self: end;
-  margin-top: 28px;
+/* Todos los inputs y selects quedan exactamente del mismo alto */
+#availabilityForm .field input,
+#availabilityForm .field select {
+  height: 58px !important;
+  min-height: 58px !important;
+  padding: 0 16px !important;
+  display: block;
+}
+
+/* El texto pequeño de ayuda ya no empuja el campo */
+#availabilityForm .field small {
+  height: 18px;
+  min-height: 18px;
+  line-height: 18px;
+  margin: 0 !important;
+  display: block;
+}
+
+/* Los campos sin texto pequeño reservan el mismo espacio */
+#availabilityForm .field:not(:has(small))::after {
+  content: "";
+  height: 18px;
+  display: block;
+}
+
+/* El botón queda alineado con los inputs */
+#availabilityForm .search-btn {
+  height: 58px !important;
+  min-height: 58px !important;
+  align-self: start !important;
+  margin-top: 29px !important;
+}
+
+/* Ajuste especial si el botón está dentro del grid como quinto elemento */
+#availabilityForm > .search-btn,
+#availabilityForm > button.search-btn {
+  grid-column: 1 / 2;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  #availabilityForm.search-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  #availabilityForm.search-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #availabilityForm .search-btn {
+    margin-top: 0 !important;
+  }
 }
